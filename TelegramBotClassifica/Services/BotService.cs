@@ -20,24 +20,19 @@ namespace TelegramBotClassifica.Services
         private readonly ITelegramBotClient _botClient;
         private readonly ILogger<BotService> _logger;
         private readonly BotConfiguration _botConfiguration;
-        // MODIFICA #1: Sostituiamo il vecchio servizio CosmosDB con la nostra nuova interfaccia generica.
         private readonly IDataService _dataService;
 
-        // MODIFICA #2: Aggiorniamo il costruttore per ricevere IDataService.
         public BotService(ITelegramBotClient botClient, ILogger<BotService> logger, BotConfiguration botConfiguration, IDataService dataService)
         {
             _botClient = botClient;
             _logger = logger;
             _botConfiguration = botConfiguration;
-            _dataService = dataService; // Inietta il nuovo servizio dati (SQLite)
+            _dataService = dataService;
         }
 
         protected override async Task ExecuteAsync(CancellationToken stoppingToken)
         {
             _logger.LogInformation("BotService is starting.");
-
-            // MODIFICA #3: Chiamiamo il metodo di inizializzazione del nuovo servizio.
-            // Per SQLite, questo creerà il file .db e applicherà le migrazioni se necessario.
             await _dataService.InitializeAsync();
 
             var receiverOptions = new ReceiverOptions
@@ -53,7 +48,6 @@ namespace TelegramBotClassifica.Services
             );
 
             _logger.LogInformation("BotService started receiving updates.");
-
             await Task.Delay(Timeout.Infinite, stoppingToken);
         }
 
@@ -70,16 +64,18 @@ namespace TelegramBotClassifica.Services
                 return;
             }
 
-            // MODIFICA #4: Tutte le chiamate a _cosmosDbService sono state sostituite con _dataService.
-            // La logica non cambia, perché l'interfaccia ha gli stessi metodi!
             await _dataService.UpdateOrCreateUserAsync(msg.From.Id, msg.From.Username, msg.From.FirstName);
 
             bool shouldSendResponse = false;
             var msgText = "";
 
+            // Se il messaggio NON è privato O NON inizia con '/', allora ignoriamo il comando.
             if (msg.Chat.Type != ChatType.Private && msg.Text?.StartsWith("/") != true)
             {
-                _logger.LogInformation("Received non-command message '{text}' from group {chatId}.", msg.Text, msg.Chat.Id);
+                // LA CORREZIONE È QUI SOTTO:
+                // Abbiamo commentato la riga che stampava i messaggi del gruppo nei log.
+                // Ora il bot ignorerà questi messaggi in completo silenzio.
+                // _logger.LogInformation("Received non-command message '{text}' from group {chatId}.", msg.Text, msg.Chat.Id);
                 return;
             }
 
@@ -135,7 +131,6 @@ namespace TelegramBotClassifica.Services
                                     }
                                     else
                                     {
-                                        // MODIFICA #4 (esempio)
                                         targetUserID = await _dataService.GetUserIdByUsernameAsync(targetUserIdentifier);
                                         if (targetUserID == 0)
                                         {
@@ -149,7 +144,6 @@ namespace TelegramBotClassifica.Services
                                     {
                                         try
                                         {
-                                            // MODIFICA #4 (esempio)
                                             var existingUser = await _dataService.GetUserPointsAsync(targetUserID);
                                             string? preservedUsername = existingUser?.Username;
                                             string? preservedFirstName = existingUser?.FirstName;
@@ -159,7 +153,6 @@ namespace TelegramBotClassifica.Services
                                                 preservedUsername = targetUserIdentifier.ToLowerInvariant().TrimStart('@');
                                             }
 
-                                            // MODIFICA #4 (esempio)
                                             await _dataService.AddOrUpdateUserPointsAsync(targetUserID, preservedUsername, preservedFirstName, coins);
                                             string displayName = !string.IsNullOrWhiteSpace(preservedUsername) ? $"@{preservedUsername}" : targetUserID.ToString();
 
@@ -197,7 +190,6 @@ namespace TelegramBotClassifica.Services
                     case "classifica":
                         if (msg.Chat.Type == ChatType.Private)
                         {
-                            // MODIFICA #4 (esempio)
                             var leaderboard = await _dataService.GetLeaderboardAsync();
                             if (!leaderboard.Any())
                             {
@@ -239,7 +231,6 @@ namespace TelegramBotClassifica.Services
                         {
                             try
                             {
-                                // MODIFICA #4 (esempio)
                                 await _dataService.ResetLeaderboardAsync();
                                 msgText = "Classifica resettata con successo!";
                             }
@@ -262,7 +253,6 @@ namespace TelegramBotClassifica.Services
                         {
                             try
                             {
-                                // MODIFICA #4 (esempio)
                                 var users = await _dataService.ExportKnownUsersAsync();
                                 var json = Newtonsoft.Json.JsonConvert.SerializeObject(users, Newtonsoft.Json.Formatting.Indented);
 

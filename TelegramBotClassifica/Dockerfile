@@ -20,8 +20,11 @@ RUN dotnet publish -c Release -o /app/publish
 FROM mcr.microsoft.com/dotnet/aspnet:8.0
 WORKDIR /app
 
-# CORREZIONE FINALE: Copiamo dalla cartella /app/publish creata nella fase di build.
+# Copiamo dalla cartella /app/publish creata nella fase di build.
 COPY --from=build /app/publish .
+
+# Espone la porta per Render (deve combaciare con la porta usata in Program.cs)
+EXPOSE 3000
 
 # Comando di avvio.
 ENTRYPOINT ["dotnet", "TelegramBotClassifica.dll"]

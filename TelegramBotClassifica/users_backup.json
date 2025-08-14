@@ -1,0 +1,1706 @@
+[
+  {
+    "id": "8b2265ae-1b3f-428a-815f-42aa63e26169",
+    "userId": 1055499888,
+    "username": "vrgi12",
+    "firstName": "Virginia",
+    "points": 55,
+    "partitionKey": "1055499888"
+  },
+  {
+    "id": "434f9e13-efa8-455d-8f1c-4d5cbf23d733",
+    "userId": 7050903544,
+    "username": "hawkeyer",
+    "firstName": "Lella",
+    "points": 5,
+    "partitionKey": "7050903544"
+  },
+  {
+    "id": "3985995a-0501-4c93-9687-0b2b32c1eadc",
+    "userId": 2105398048,
+    "username": "giangy_1993",
+    "firstName": "Gianluca",
+    "points": 20,
+    "partitionKey": "2105398048"
+  },
+  {
+    "id": "ab585d3a-fbcc-4cf5-9e75-e85583802056",
+    "userId": 1573541207,
+    "username": "pett_inabambole",
+    "firstName": "Elita 🫶🏻",
+    "points": 15,
+    "partitionKey": "1573541207"
+  },
+  {
+    "id": "1192373a-e62b-41b3-8316-6d1c78b22d6e",
+    "userId": 1171452108,
+    "username": "rosells30",
+    "firstName": "Rosa",
+    "points": 155,
+    "partitionKey": "1171452108"
+  },
+  {
+    "id": "fbd73992-0607-4c3c-bc98-5f9cba29e786",
+    "userId": 1983032941,
+    "username": "d_4nt",
+    "firstName": "Antonio",
+    "points": 175,
+    "partitionKey": "1983032941"
+  },
+  {
+    "id": "5193f493-bdac-45bf-986e-6a5fae134ce5",
+    "userId": 7810433737,
+    "username": "barbyaury82",
+    "firstName": "Barbara (Venus)",
+    "points": 45,
+    "partitionKey": "7810433737"
+  },
+  {
+    "id": "a005b754-b978-4995-8b9d-c2d53bce2958",
+    "userId": 5139354513,
+    "username": "cassiopeak1984",
+    "firstName": "Alessia🍒💣",
+    "points": 80,
+    "partitionKey": "5139354513"
+  },
+  {
+    "id": "cd4c19d1-9480-42df-8d7e-20fa9c300a5d",
+    "userId": 5308073676,
+    "username": "manuel010101010",
+    "firstName": "Manuel",
+    "points": 5,
+    "partitionKey": "5308073676"
+  },
+  {
+    "id": "81cca567-e20b-4d39-b3ad-6f82834d910b",
+    "userId": 6972057830,
+    "username": "veronica24_89",
+    "firstName": "Veronica🤍",
+    "points": 90,
+    "partitionKey": "6972057830"
+  },
+  {
+    "id": "752bb192-eeb2-400a-a444-230c04d52f94",
+    "userId": 147484439,
+    "username": "valeeeeeeeeeeeeee1",
+    "firstName": "Valerio",
+    "points": 69,
+    "partitionKey": "147484439"
+  },
+  {
+    "id": "f5ceafb3-688a-4f9e-b47d-ed417ce9c46d",
+    "userId": 332766041,
+    "username": "moonellina",
+    "firstName": "𝚀𝚞𝚎𝚎𝚗 𝚟𝚎𝚎",
+    "points": 175,
+    "partitionKey": "332766041"
+  },
+  {
+    "id": "7d263b63-bc2d-4703-81f7-49b7b0a52534",
+    "userId": 571971080,
+    "username": "lisa390",
+    "firstName": "👽 Lisa",
+    "points": 35,
+    "partitionKey": "571971080"
+  },
+  {
+    "id": "cd774c48-e709-466a-9a8e-e8511bda91b1",
+    "userId": 1204671560,
+    "username": "giusi2007",
+    "firstName": "Giusi",
+    "points": 100,
+    "partitionKey": "1204671560"
+  },
+  {
+    "id": "fe23ffce-a208-4a14-987f-302b4efbec92",
+    "userId": 520643804,
+    "username": "traxo94",
+    "firstName": "Dan",
+    "points": 15,
+    "partitionKey": "520643804"
+  },
+  {
+    "id": "83fb771c-c02f-42d9-97e3-3228a41592b3",
+    "userId": 1929927108,
+    "username": "beep88",
+    "firstName": "𝙳𝚎𝚗𝚣𝚎𝚕",
+    "points": 20,
+    "partitionKey": "1929927108"
+  },
+  {
+    "id": "47d23aaa-2184-4ef7-92f2-ccb96127e7a7",
+    "userId": 1448131817,
+    "username": "v_ale91",
+    "firstName": "Valentina",
+    "points": 15,
+    "partitionKey": "1448131817"
+  },
+  {
+    "id": "53ec4fe6-a876-4cb7-9af8-4b344881cfa8",
+    "userId": 6891675863,
+    "username": "lagatta1972",
+    "firstName": "Rita",
+    "points": 85,
+    "partitionKey": "6891675863"
+  },
+  {
+    "id": "48140b3f-a925-4c8a-9baa-9b2a4c8d419b",
+    "userId": 5879196705,
+    "username": "pikkola1985",
+    "firstName": "Jenni",
+    "points": 40,
+    "partitionKey": "5879196705"
+  },
+  {
+    "id": "d0975e0f-eb44-40e3-bd3b-9afea35af6e7",
+    "userId": 6350780365,
+    "username": "fabiola333333",
+    "firstName": "Fabiola",
+    "points": 175,
+    "partitionKey": "6350780365"
+  },
+  {
+    "id": "1ff252e2-c4a6-4b04-a992-471c3f286ba5",
+    "userId": 7339871646,
+    "username": "moonset00",
+    "firstName": "ꕷꖹꕷꗇꖦ",
+    "points": 55,
+    "partitionKey": "7339871646"
+  },
+  {
+    "id": "b2f6b303-d96f-40f2-a45d-4182cefc1359",
+    "userId": 1216046110,
+    "username": "maanchemenoeh",
+    "firstName": "Cristian",
+    "points": 0,
+    "partitionKey": "1216046110"
+  },
+  {
+    "id": "bca2f87d-de6c-4b95-b807-4a3877cb6aa2",
+    "userId": 6431938220,
+    "username": "ani_0512",
+    "firstName": "Ãꫜy🦋",
+    "points": 20,
+    "partitionKey": "6431938220"
+  },
+  {
+    "id": "63627788-23bf-4f28-90b8-d85f5a4d517a",
+    "userId": 806626122,
+    "username": "giulio1709",
+    "firstName": "GIULIO",
+    "points": 5,
+    "partitionKey": "806626122"
+  },
+  {
+    "id": "01f3800d-8cae-4a3d-8aed-a3fe01316030",
+    "userId": 1878831354,
+    "username": "carlotta_manodoro",
+    "firstName": "Carlotta",
+    "points": 10,
+    "partitionKey": "1878831354"
+  },
+  {
+    "id": "632e0e30-5346-4001-9d3c-55ae369311f0",
+    "userId": 7709670375,
+    "username": "cappi09",
+    "firstName": "Michele🎺",
+    "points": 505,
+    "partitionKey": "7709670375"
+  },
+  {
+    "id": "82e38fbf-717f-4f30-a6af-61263b2cd16a",
+    "userId": 8008382270,
+    "username": "serena_2390",
+    "firstName": "Serena",
+    "points": 5,
+    "partitionKey": "8008382270"
+  },
+  {
+    "id": "c8f0c87a-4dc3-45fb-9536-7805802456e7",
+    "userId": 6608267748,
+    "username": "orianita1112",
+    "firstName": "Ori",
+    "points": 15,
+    "partitionKey": "6608267748"
+  },
+  {
+    "id": "16a76909-af5e-402a-a5f0-f0a1d64d5b54",
+    "userId": 594042058,
+    "username": "ale82p2p",
+    "firstName": "𝕬𝖑𝖊𝖘𝖘𝖆𝖓𝖉𝖗𝖆",
+    "points": 0,
+    "partitionKey": "594042058"
+  },
+  {
+    "id": "89ddaf2b-23ee-4195-b5ba-d50bebf24435",
+    "userId": 7938222443,
+    "username": "iamaras1",
+    "firstName": "aras",
+    "points": 85,
+    "partitionKey": "7938222443"
+  },
+  {
+    "id": "32697956-b841-473f-b07d-7b77451e504d",
+    "userId": 6919064560,
+    "username": "patugool",
+    "firstName": "Patugol⚽️ $X🦅",
+    "points": 0,
+    "partitionKey": "6919064560"
+  },
+  {
+    "id": "3cd793ab-1ec9-4280-8b3f-904863eb4733",
+    "userId": 163850118,
+    "username": "tessacolucci",
+    "firstName": "Tessa♡",
+    "points": 265,
+    "partitionKey": "163850118"
+  },
+  {
+    "id": "dce05431-2be3-43db-ac1b-1e374632ccb6",
+    "userId": 1938229369,
+    "username": "vero0_0",
+    "firstName": "Veronica👀",
+    "points": 40,
+    "partitionKey": "1938229369"
+  },
+  {
+    "id": "d4f3eef7-d07a-4508-a511-e9ebbde186c5",
+    "userId": 6548246368,
+    "username": "francy1234",
+    "firstName": "Fra",
+    "points": 25,
+    "partitionKey": "6548246368"
+  },
+  {
+    "id": "c259e887-d560-4992-ae3f-051535b802fa",
+    "userId": 547260823,
+    "username": "lucaa2",
+    "firstName": "Luca",
+    "points": 5,
+    "partitionKey": "547260823"
+  },
+  {
+    "id": "721550cc-d60e-4416-bc97-7e6912698499",
+    "userId": 1467397834,
+    "username": "implacabil",
+    "firstName": "Roberto",
+    "points": 5,
+    "partitionKey": "1467397834"
+  },
+  {
+    "id": "32365fee-2849-4af0-a0f6-229e63ca4d3c",
+    "userId": 6266321258,
+    "username": "benesi1246",
+    "firstName": "moha",
+    "points": 0,
+    "partitionKey": "6266321258"
+  },
+  {
+    "id": "14f26e01-899e-4bc6-96ae-185602c57db2",
+    "userId": 155717914,
+    "username": "nadiarambaldi",
+    "firstName": "Nadia",
+    "points": 0,
+    "partitionKey": "155717914"
+  },
+  {
+    "id": "5b0bbbe1-1e66-4f9a-9fcc-65efe05b153a",
+    "userId": 6028478826,
+    "username": "gioco6362",
+    "firstName": "Paolo",
+    "points": 0,
+    "partitionKey": "6028478826"
+  },
+  {
+    "id": "f8ee31ac-449e-4368-942d-5a40eecbb3df",
+    "userId": 386071602,
+    "username": "nikename10",
+    "firstName": "Nike",
+    "points": 0,
+    "partitionKey": "386071602"
+  },
+  {
+    "id": "5d691cd0-86bc-4adf-8c8c-6596ad8a0bf9",
+    "userId": 6977811561,
+    "username": "aliceprins9",
+    "firstName": "Alice",
+    "points": 120,
+    "partitionKey": "6977811561"
+  },
+  {
+    "id": "1c748c97-e112-4904-bc22-c77f3ffaeeb9",
+    "userId": 5058708874,
+    "username": "tunzmary",
+    "firstName": "Marina 🌈",
+    "points": 5,
+    "partitionKey": "5058708874"
+  },
+  {
+    "id": "a011455c-c800-4c94-91ce-13a43987c63b",
+    "userId": 1309988593,
+    "username": "raphtalia11",
+    "firstName": "Claudia",
+    "points": 5,
+    "partitionKey": "1309988593"
+  },
+  {
+    "id": "30f81b0e-2aa8-49e5-bc8a-0491ec9251ed",
+    "userId": 573789841,
+    "username": "steyoshizu",
+    "firstName": "Stefano",
+    "points": 0,
+    "partitionKey": "573789841"
+  },
+  {
+    "id": "e90fdcda-be93-417f-ab9e-17a0bea11696",
+    "userId": 515278502,
+    "username": "spybarpr",
+    "firstName": "Bruce",
+    "points": 5,
+    "partitionKey": "515278502"
+  },
+  {
+    "id": "955f5e6c-b18b-46a3-a2b5-2ff6a6cb2140",
+    "userId": 5997936801,
+    "username": "mariagiovanna88",
+    "firstName": "Maria Giovanna",
+    "points": 55,
+    "partitionKey": "5997936801"
+  },
+  {
+    "id": "8c858ed3-32ae-4eb2-9180-fef7fc809b39",
+    "userId": 7171207515,
+    "username": "unnusacciuu",
+    "firstName": "Ivana",
+    "points": 20,
+    "partitionKey": "7171207515"
+  },
+  {
+    "id": "aedfee15-3699-4e13-a851-f630f6ff943e",
+    "userId": 115587997,
+    "username": "linho84ch",
+    "firstName": "Ⱡł₦ⱧØ",
+    "points": 5,
+    "partitionKey": "115587997"
+  },
+  {
+    "id": "165d473f-82ae-4867-a300-b010d3152e36",
+    "userId": 727132688,
+    "username": "t0ny11",
+    "firstName": "Tony11",
+    "points": 0,
+    "partitionKey": "727132688"
+  },
+  {
+    "id": "2301ebe5-52ac-4ba5-8e0e-1b503a288697",
+    "userId": 1674337138,
+    "username": "lafedeb93",
+    "firstName": "Ginny ▕⃝⃤ ⚯͛ 9¾",
+    "points": 444,
+    "partitionKey": "1674337138"
+  },
+  {
+    "id": "50d61c4b-a12e-40ae-a7fa-f7eb90782a83",
+    "userId": 268617942,
+    "username": "andrealebron97",
+    "firstName": "Andrea",
+    "points": 20,
+    "partitionKey": "268617942"
+  },
+  {
+    "id": "1bf69155-ed01-48d4-8ac9-f7f83ab37ccd",
+    "userId": 6368706850,
+    "username": "giusyy84",
+    "firstName": "Giusy",
+    "points": 0,
+    "partitionKey": "6368706850"
+  },
+  {
+    "id": "bf75ec3d-fe76-428b-b7a8-243ae0abf0fc",
+    "userId": 6335167523,
+    "username": "pinguu03",
+    "firstName": "𝗚𝗶𝗼𝘃𝗮𝗻𝗻𝗶🐧",
+    "points": 10,
+    "partitionKey": "6335167523"
+  },
+  {
+    "id": "bf2ef78f-d92d-4db3-b645-6431c1533b0b",
+    "userId": 1901118722,
+    "username": "annaaa189",
+    "firstName": "𝓐𝓷𝓷𝓪",
+    "points": 150,
+    "partitionKey": "1901118722"
+  },
+  {
+    "id": "6336e2b7-670f-45cc-ac4f-782d372caef4",
+    "userId": 669256822,
+    "username": "rora125",
+    "firstName": "Rora💜",
+    "points": 15,
+    "partitionKey": "669256822"
+  },
+  {
+    "id": "8f7757c4-bef6-4341-82ae-e23638bd3595",
+    "userId": 892254174,
+    "username": "saragallo3",
+    "firstName": "Sara",
+    "points": 5,
+    "partitionKey": "892254174"
+  },
+  {
+    "id": "e7c05a14-c4f0-4106-acc4-bcd29b4c3687",
+    "userId": 320913460,
+    "username": "jole_8",
+    "firstName": "⋆. ˚⁂🌻𝔍𝔬𝔩𝔢🧿⁂⋆. ˚",
+    "points": 100,
+    "partitionKey": "320913460"
+  },
+  {
+    "id": "1af66d8b-852a-4cef-af6a-bbf53e454e24",
+    "userId": 5593490176,
+    "username": "stellac93",
+    "firstName": "Stella",
+    "points": 250,
+    "partitionKey": "5593490176"
+  },
+  {
+    "id": "e666cd76-37bb-497b-bece-10a8deb03421",
+    "userId": 360340480,
+    "username": "cepele",
+    "firstName": "Klein",
+    "points": 10,
+    "partitionKey": "360340480"
+  },
+  {
+    "id": "f95042d5-1370-47f1-88b4-8d33306d2973",
+    "userId": 1289179295,
+    "username": "noamy_aloah",
+    "firstName": "nanà🍓",
+    "points": 10,
+    "partitionKey": "1289179295"
+  },
+  {
+    "id": "79cd34bc-e711-48e4-a33c-c968ce29967e",
+    "userId": 104973722,
+    "username": "psharkhighwall",
+    "firstName": "Psharkhighwall",
+    "points": 5,
+    "partitionKey": "104973722"
+  },
+  {
+    "id": "e38e2ca3-4927-4a82-a643-e419e36c9a52",
+    "userId": 352012894,
+    "username": "raff26",
+    "firstName": "Raff",
+    "points": 5,
+    "partitionKey": "352012894"
+  },
+  {
+    "id": "23749b75-ec7d-42b7-a2d5-e83d83b102ca",
+    "userId": 2102920929,
+    "username": "ke_ne_so",
+    "firstName": "Peppe",
+    "points": 35,
+    "partitionKey": "2102920929"
+  },
+  {
+    "id": "ebfab403-de05-4b15-b40a-bbd8a5d4a27c",
+    "userId": 390489099,
+    "username": "aurex66",
+    "firstName": "✌𝓐𝓾𝓻𝓮𝔁666✌",
+    "points": 0,
+    "partitionKey": "390489099"
+  },
+  {
+    "id": "feff98bf-3998-4035-833c-661ae39e34b3",
+    "userId": 1489745677,
+    "username": "enzosen",
+    "firstName": "Vincenzo",
+    "points": 0,
+    "partitionKey": "1489745677"
+  },
+  {
+    "id": "1cb6dc03-ff52-4d6f-97bc-642704f8e91e",
+    "userId": 1223320345,
+    "username": "masterfabio81",
+    "firstName": "FABI",
+    "points": 5,
+    "partitionKey": "1223320345"
+  },
+  {
+    "id": "5ce90650-1f25-497b-ad46-9afa8cee76bd",
+    "userId": 1045792364,
+    "username": "ziotommy0393",
+    "firstName": "Tommaso",
+    "points": 10,
+    "partitionKey": "1045792364"
+  },
+  {
+    "id": "f56644cf-dbd1-45ba-acca-cae808b06f81",
+    "userId": 6724559567,
+    "username": "marisaedemo",
+    "firstName": "marisa",
+    "points": 0,
+    "partitionKey": "6724559567"
+  },
+  {
+    "id": "d34a2d36-b7e0-4414-92e4-963f7740752f",
+    "userId": 242594084,
+    "username": "alixgun",
+    "firstName": "Alix 🎼",
+    "points": 40,
+    "partitionKey": "242594084"
+  },
+  {
+    "id": "ba27cd03-1c61-4927-b17d-32c12c6b8bc2",
+    "userId": 806931170,
+    "username": "simone_anime",
+    "firstName": "Simo Anime Fan 🧐",
+    "points": 0,
+    "partitionKey": "806931170"
+  },
+  {
+    "id": "9d85d797-2058-4471-996d-394baa743e6e",
+    "userId": 334746151,
+    "username": "cherryyfed",
+    "firstName": "Fed✨",
+    "points": 0,
+    "partitionKey": "334746151"
+  },
+  {
+    "id": "a54ca797-6c2c-4af5-9f54-643651d0b772",
+    "userId": 759633849,
+    "username": "mejosoli",
+    "firstName": "Mejo soli...",
+    "points": 20,
+    "partitionKey": "759633849"
+  },
+  {
+    "id": "4016145d-a4d0-42ea-a12b-8add7e409651",
+    "userId": 6474394780,
+    "username": "catanto68",
+    "firstName": "Catia68",
+    "points": 0,
+    "partitionKey": "6474394780"
+  },
+  {
+    "id": "2541c4d5-0ee3-42ad-acd8-80aeffcdef71",
+    "userId": 1849523902,
+    "username": "trottola64",
+    "firstName": "Patty",
+    "points": 120,
+    "partitionKey": "1849523902"
+  },
+  {
+    "id": "a4fe9fa8-15a3-4e5c-be1d-29e4fb976b80",
+    "userId": 5099683793,
+    "username": "antonellaaaaaaaaaaaaa",
+    "firstName": "Antonella",
+    "points": 0,
+    "partitionKey": "5099683793"
+  },
+  {
+    "id": "dd63f772-19e0-4208-937b-edbc2bef81c9",
+    "userId": 933922974,
+    "username": "zulema81",
+    "firstName": "ZULEMA",
+    "points": 15,
+    "partitionKey": "933922974"
+  },
+  {
+    "id": "70560211-2fdf-4844-bd67-631410efa4a0",
+    "userId": 538903586,
+    "username": "srbcrazy",
+    "firstName": "Sara",
+    "points": 110,
+    "partitionKey": "538903586"
+  },
+  {
+    "id": "b7ce0f43-ca50-4531-9eb7-65aa6cfa06bd",
+    "userId": 380112749,
+    "username": "socialadv",
+    "firstName": "Mattia 🥑",
+    "points": 60,
+    "partitionKey": "380112749"
+  },
+  {
+    "id": "1f116b7b-76a1-4837-bea4-174e42745156",
+    "userId": 6076483030,
+    "username": "isy1990",
+    "firstName": "꧁✨🌸їşⱥ🌸✨꧂",
+    "points": 80,
+    "partitionKey": "6076483030"
+  },
+  {
+    "id": "2f479d43-f7c5-4143-8f80-e81ee05cdd4a",
+    "userId": 8103750461,
+    "username": "stostanca",
+    "firstName": "ℂ𝕙𝕒𝕤𝕖_𝕥𝕙𝕖_𝕊𝕦𝕟 🌻",
+    "points": 20,
+    "partitionKey": "8103750461"
+  },
+  {
+    "id": "32836156-4210-4723-978b-5fed312f9caf",
+    "userId": 900119484,
+    "username": "d_sofi_b",
+    "firstName": "Sofi 🕷🕸 🦇",
+    "points": 5,
+    "partitionKey": "900119484"
+  },
+  {
+    "id": "c2626b1f-b741-4ebf-8ec8-7c396b9baabd",
+    "userId": 991174362,
+    "username": "filly89",
+    "firstName": "Filly",
+    "points": 0,
+    "partitionKey": "991174362"
+  },
+  {
+    "id": "d240b446-5c3d-4351-9f64-0a2afd7a597b",
+    "userId": 305510673,
+    "username": "lakus05",
+    "firstName": "Rex",
+    "points": 10,
+    "partitionKey": "305510673"
+  },
+  {
+    "id": "95ceeca8-01e2-4c4e-88d0-c0ad8ca80fc7",
+    "userId": 584710499,
+    "username": "aleemene",
+    "firstName": "Alessia",
+    "points": 0,
+    "partitionKey": "584710499"
+  },
+  {
+    "id": "30c57fed-e9e5-41c5-a25c-079b99edaa34",
+    "userId": 848029528,
+    "username": "itssgiulia11",
+    "firstName": "Giulia",
+    "points": 0,
+    "partitionKey": "848029528"
+  },
+  {
+    "id": "360a148b-6587-413a-a166-530de8528759",
+    "userId": 2095420005,
+    "username": "duckduff14",
+    "firstName": "Nathan",
+    "points": 100,
+    "partitionKey": "2095420005"
+  },
+  {
+    "id": "d70240cc-a214-4c76-836a-a92e96194f13",
+    "userId": 193281253,
+    "username": "kempo1983",
+    "firstName": "Andrea",
+    "points": 0,
+    "partitionKey": "193281253"
+  },
+  {
+    "id": "7b8430eb-dc5f-4ada-973a-e6f289e019fb",
+    "userId": 966448386,
+    "username": "gegibasi",
+    "firstName": "Jessica",
+    "points": 10,
+    "partitionKey": "966448386"
+  },
+  {
+    "id": "42334222-ad95-45b0-9ec9-4c834c3a34cb",
+    "userId": 7146115661,
+    "username": "liby94",
+    "firstName": "Maria",
+    "points": 5,
+    "partitionKey": "7146115661"
+  },
+  {
+    "id": "4c1e6c10-f41d-40db-b6a3-9ed98e489831",
+    "userId": 2109362068,
+    "username": "maxantonella79",
+    "firstName": "Antonella",
+    "points": 0,
+    "partitionKey": "2109362068"
+  },
+  {
+    "id": "8e8e2a9d-9829-40a8-8fca-fc1781f80652",
+    "userId": 1036099639,
+    "username": "valeriacsc",
+    "firstName": "Valeria†♡",
+    "points": 10,
+    "partitionKey": "1036099639"
+  },
+  {
+    "id": "83088b97-81e5-4a27-b8b2-e224d3ae85e2",
+    "userId": 354332705,
+    "username": "rosy95",
+    "firstName": "Rosanna",
+    "points": 5,
+    "partitionKey": "354332705"
+  },
+  {
+    "id": "eb68e212-87b8-42ec-a08f-8ba64b6d24a8",
+    "userId": 1959148868,
+    "username": "toccuss8",
+    "firstName": "Lorenzo",
+    "points": 10,
+    "partitionKey": "1959148868"
+  },
+  {
+    "id": "8c8b731e-6e7f-45f1-ab60-92c07bdd8795",
+    "userId": 1169923287,
+    "username": "gemme02",
+    "firstName": "Anca",
+    "points": 5,
+    "partitionKey": "1169923287"
+  },
+  {
+    "id": "f2c1fbc3-a841-4062-8d44-d06b1df5fe56",
+    "userId": 612480768,
+    "username": "christopher76",
+    "firstName": "Christo",
+    "points": 0,
+    "partitionKey": "612480768"
+  },
+  {
+    "id": "504ce900-45b6-4b5d-addb-599ddf7b83eb",
+    "userId": 6556496314,
+    "username": "trika67",
+    "firstName": "Cristina",
+    "points": 130,
+    "partitionKey": "6556496314"
+  },
+  {
+    "id": "58a0ae7a-7ce1-4c3f-896a-8df7902fd890",
+    "userId": 6321377021,
+    "username": "g_a0522",
+    "firstName": "Giusy",
+    "points": 45,
+    "partitionKey": "6321377021"
+  },
+  {
+    "id": "b91a2c12-3476-46a8-a412-98d374047b74",
+    "userId": 1882925167,
+    "username": "gxnzygirl",
+    "firstName": "ꪀωεμίν 🚔",
+    "points": 5,
+    "partitionKey": "1882925167"
+  },
+  {
+    "id": "f8444bfb-a479-46be-b8ed-4a3d31b092f9",
+    "userId": 2128092415,
+    "username": "idacici85",
+    "firstName": "Cicibu85",
+    "points": 0,
+    "partitionKey": "2128092415"
+  },
+  {
+    "id": "d8e1757f-acca-44b0-a157-d237f243297e",
+    "userId": 1310262731,
+    "username": "deb245",
+    "firstName": "Deb",
+    "points": 0,
+    "partitionKey": "1310262731"
+  },
+  {
+    "id": "6075fc24-5170-4c5f-8a54-cff1728ac5ae",
+    "userId": 6453568031,
+    "username": "sara_la_princi",
+    "firstName": "Sara",
+    "points": 0,
+    "partitionKey": "6453568031"
+  },
+  {
+    "id": "9290621c-41d6-4e71-90a5-10b2577de7c8",
+    "userId": 1213987382,
+    "username": "laterry87",
+    "firstName": "᭄ 𝑇𝑒𝑟𝑟𝑦",
+    "points": 0,
+    "partitionKey": "1213987382"
+  },
+  {
+    "id": "b2d3ba23-0a90-4434-aaf8-6ec268a78dcf",
+    "userId": 1893136092,
+    "username": "iosonoio22a",
+    "firstName": "ivan",
+    "points": 0,
+    "partitionKey": "1893136092"
+  },
+  {
+    "id": "38ee7eca-515f-4364-b71a-5b00cecad8e0",
+    "userId": 6791176688,
+    "username": "rox16rox",
+    "firstName": "Ros",
+    "points": 5,
+    "partitionKey": "6791176688"
+  },
+  {
+    "id": "eb14664f-a876-47f4-bcc6-8b0418f654eb",
+    "userId": 83657585,
+    "username": "smilealexia",
+    "firstName": "Alessandra",
+    "points": 15,
+    "partitionKey": "83657585"
+  },
+  {
+    "id": "99c06129-a7af-4dd2-977f-daf1ac82de36",
+    "userId": 301672935,
+    "username": "esterp91",
+    "firstName": "Ester",
+    "points": 10,
+    "partitionKey": "301672935"
+  },
+  {
+    "id": "c6ab9d39-c904-4665-aba9-17b66881c6b9",
+    "userId": 797159940,
+    "username": "ersilia11",
+    "firstName": "Ersilia",
+    "points": 0,
+    "partitionKey": "797159940"
+  },
+  {
+    "id": "d5cb261e-d5a0-4af4-9de5-a656f3a44a19",
+    "userId": 1851149755,
+    "username": "lucaab7",
+    "firstName": "Luca",
+    "points": 0,
+    "partitionKey": "1851149755"
+  },
+  {
+    "id": "ec585438-ce98-4a5d-8acb-5bdbc4f2bedc",
+    "userId": 900249930,
+    "username": "annaesanti",
+    "firstName": "Ana",
+    "points": 0,
+    "partitionKey": "900249930"
+  },
+  {
+    "id": "78cce306-97c3-4640-9ee3-28b6440f8007",
+    "userId": 6348509820,
+    "username": "feder1995",
+    "firstName": "F€D€",
+    "points": 10,
+    "partitionKey": "6348509820"
+  },
+  {
+    "id": "ecca3651-b78d-4b69-90e6-63a353d05b69",
+    "userId": 5135890374,
+    "username": "streghettasaggia",
+    "firstName": "𝔊𝔢𝔰𝔰𝔦𝔠𝔞",
+    "points": 5,
+    "partitionKey": "5135890374"
+  },
+  {
+    "id": "b55df577-ba0b-4542-b05e-4729e0f8a603",
+    "userId": 6615587985,
+    "username": "erika0987",
+    "firstName": "erika",
+    "points": 0,
+    "partitionKey": "6615587985"
+  },
+  {
+    "id": "5c22073e-6096-4b7a-9016-8a9d0ec7f777",
+    "userId": 5811077648,
+    "username": "bahshjsjsjdjdhj",
+    "firstName": "Sergio",
+    "points": 0,
+    "partitionKey": "5811077648"
+  },
+  {
+    "id": "95be669e-7a1b-44be-97d9-278c93e16e0e",
+    "userId": 1147088335,
+    "username": "mic04l",
+    "firstName": "Mic",
+    "points": 10,
+    "partitionKey": "1147088335"
+  },
+  {
+    "id": "03d45812-8081-46c0-a154-47b9756c871e",
+    "userId": 1350821475,
+    "username": "noemiilaserraa",
+    "firstName": "noemi",
+    "points": 15,
+    "partitionKey": "1350821475"
+  },
+  {
+    "id": "dc62fce0-8bcc-4e48-b496-309558eb2ce6",
+    "userId": 478373636,
+    "username": "martinapuddu",
+    "firstName": "Martina ✨",
+    "points": 5,
+    "partitionKey": "478373636"
+  },
+  {
+    "id": "e480c7b0-7425-49c9-9027-a8541398d5d7",
+    "userId": 8060847225,
+    "username": "jack_z05",
+    "firstName": "Jack",
+    "points": 5,
+    "partitionKey": "8060847225"
+  },
+  {
+    "id": "584c3a2b-5587-4b49-b1d2-4b7d8da24e9f",
+    "userId": 7203557442,
+    "username": "cimicenera",
+    "firstName": "cimice",
+    "points": 0,
+    "partitionKey": "7203557442"
+  },
+  {
+    "id": "25b1e4fd-a31d-4406-b90e-af916fe0817d",
+    "userId": 2033161905,
+    "username": "deny010912",
+    "firstName": "Denise",
+    "points": 0,
+    "partitionKey": "2033161905"
+  },
+  {
+    "id": "859b9867-e019-41b3-abd8-2f7ee2a35edd",
+    "userId": 7792818561,
+    "username": "giovanni_dimauro_8",
+    "firstName": "Giovanni",
+    "points": 0,
+    "partitionKey": "7792818561"
+  },
+  {
+    "id": "de322270-d525-4974-96da-1155d478585c",
+    "userId": 5911482658,
+    "username": "laur4_oo",
+    "firstName": "Laura",
+    "points": 0,
+    "partitionKey": "5911482658"
+  },
+  {
+    "id": "734eb1a0-d56f-4149-a5b9-ce652d9e2340",
+    "userId": 935262826,
+    "username": "marcoultras1988",
+    "firstName": "marco",
+    "points": 0,
+    "partitionKey": "935262826"
+  },
+  {
+    "id": "57fb9ea1-b6e7-4343-b19f-76415d967a1a",
+    "userId": 8040485864,
+    "username": "savio1246",
+    "firstName": "Savio",
+    "points": 10,
+    "partitionKey": "8040485864"
+  },
+  {
+    "id": "6fcc0530-5565-45dd-bd9d-928093e68dd5",
+    "userId": 6418291494,
+    "username": "susan_rokn",
+    "firstName": "Susy",
+    "points": 5,
+    "partitionKey": "6418291494"
+  },
+  {
+    "id": "11ca23af-78ff-49fb-a611-a74681cf2866",
+    "userId": 21269872,
+    "username": "lil6nt",
+    "firstName": "𝕷𝖎𝖑 𝕾𝖆𝖎𝖓𝖙",
+    "points": 0,
+    "partitionKey": "21269872"
+  },
+  {
+    "id": "58c7485f-2921-4268-abde-a8b1890fc21f",
+    "userId": 1087968824,
+    "username": "groupanonymousbot",
+    "firstName": "Group",
+    "points": 0,
+    "partitionKey": "1087968824"
+  },
+  {
+    "id": "5d8999f2-1447-459a-96f7-825caa1d7188",
+    "userId": 1747446338,
+    "username": "bujeatan",
+    "firstName": "Samira.🦄",
+    "points": 0,
+    "partitionKey": "1747446338"
+  },
+  {
+    "id": "fdc5e095-3b99-4a0b-9c5b-d4e11f0ba9f4",
+    "userId": 6949342331,
+    "username": "angyangyf",
+    "firstName": "Angela",
+    "points": 5,
+    "partitionKey": "6949342331"
+  },
+  {
+    "id": "24414196-7d8f-4ca1-83dd-8e69b06e876d",
+    "userId": 718299902,
+    "username": "chiaretta997",
+    "firstName": "chiara",
+    "points": 0,
+    "partitionKey": "718299902"
+  },
+  {
+    "id": "fec91c8a-4964-47f8-876c-96c3401467de",
+    "userId": 542945344,
+    "username": "tommy0333",
+    "firstName": "Tommy🧑‍💻",
+    "points": 0,
+    "partitionKey": "542945344"
+  },
+  {
+    "id": "fb705789-5a9b-43d8-845d-e3bcfaa9f0c6",
+    "userId": 6006360802,
+    "username": "arita74",
+    "firstName": "Rita05 🐈‍⬛",
+    "points": 55,
+    "partitionKey": "6006360802"
+  },
+  {
+    "id": "89349f04-34fc-44f8-bd24-a84b5219d5a7",
+    "userId": 6898167175,
+    "username": "taidy78",
+    "firstName": "Taidy",
+    "points": 5,
+    "partitionKey": "6898167175"
+  },
+  {
+    "id": "33f67f12-f4bd-47f7-957e-75df0ba923cd",
+    "userId": 7307420311,
+    "username": "kela789",
+    "firstName": "Michela",
+    "points": 0,
+    "partitionKey": "7307420311"
+  },
+  {
+    "id": "93200b6a-bca3-450b-b4e2-4683497ca826",
+    "userId": 844876295,
+    "username": "giorgioguareschi",
+    "firstName": "GiorgioGuareschi",
+    "points": 0,
+    "partitionKey": "844876295"
+  },
+  {
+    "id": "3596235c-e02f-4c7f-85ec-f03195a814af",
+    "userId": 5029050830,
+    "username": "ilkaos1990",
+    "firstName": "Kaostudioroma",
+    "points": 0,
+    "partitionKey": "5029050830"
+  },
+  {
+    "id": "ef26ea12-9abc-41dd-842f-6c78db51be27",
+    "userId": 6165994785,
+    "username": "elexxc",
+    "firstName": "Ele",
+    "points": 10,
+    "partitionKey": "6165994785"
+  },
+  {
+    "id": "710e0170-6d5e-461b-b6aa-933e1d56c896",
+    "userId": 1768570520,
+    "username": "giuppy1234",
+    "firstName": "Giuppy",
+    "points": 0,
+    "partitionKey": "1768570520"
+  },
+  {
+    "id": "dfe3f2fa-7e8f-44ce-bc5e-17d4c77851ae",
+    "userId": 724932369,
+    "username": "strawberry_milk0",
+    "firstName": "✴.·´¯`·.· 🎀𝓑𝓻𝓾𝓷𝓮𝓽𝓽𝓮🎀 ·.·`¯´·.✴",
+    "points": 0,
+    "partitionKey": "724932369"
+  },
+  {
+    "id": "6b031812-9d18-4226-a572-64448317ee7f",
+    "userId": 495268135,
+    "username": "nonsonoioo",
+    "firstName": "シɴɪɴᴀ❥♒︎[ₒffₗᵢₙₑ]ツ",
+    "points": 0,
+    "partitionKey": "495268135"
+  },
+  {
+    "id": "c9ffe9d7-ce81-4ecf-9e40-8fd50fb88f57",
+    "userId": 772001651,
+    "username": "desireperrone",
+    "firstName": "Perrone Desire",
+    "points": 0,
+    "partitionKey": "772001651"
+  },
+  {
+    "id": "2092b743-2b84-4478-a1f4-d978ecd6c394",
+    "userId": 1443050656,
+    "username": "nome_nessuno_00",
+    "firstName": "Angelo",
+    "points": 0,
+    "partitionKey": "1443050656"
+  },
+  {
+    "id": "102decb7-0b66-47fa-8a09-3efe0696ef5e",
+    "userId": 6454345503,
+    "username": "s0f8y1",
+    "firstName": "Sofy",
+    "points": 0,
+    "partitionKey": "6454345503"
+  },
+  {
+    "id": "188afe02-3305-43d0-922d-764d1cac5c9b",
+    "userId": 302125243,
+    "username": "exeggwp",
+    "firstName": "exe",
+    "points": 0,
+    "partitionKey": "302125243"
+  },
+  {
+    "id": "91932dd2-13eb-4d66-8359-98b68ed9bddf",
+    "userId": 5139694447,
+    "username": "marja1983",
+    "firstName": "Marja",
+    "points": 0,
+    "partitionKey": "5139694447"
+  },
+  {
+    "id": "1b88ba9e-6709-4ca2-b918-49ef4eebe292",
+    "userId": 1321558467,
+    "username": "sicily1823",
+    "firstName": "Mary",
+    "points": 10,
+    "partitionKey": "1321558467"
+  },
+  {
+    "id": "2638e4e6-d2a9-46e5-a5d1-342a16cb48fc",
+    "userId": 6077371544,
+    "username": "anaastasia6",
+    "firstName": "Anastasia",
+    "points": 10,
+    "partitionKey": "6077371544"
+  },
+  {
+    "id": "aef67886-8172-4daa-ba60-e5aac15c4a5d",
+    "userId": 7899342125,
+    "username": "marypersy",
+    "firstName": "mary.",
+    "points": 10,
+    "partitionKey": "7899342125"
+  },
+  {
+    "id": "17b46a69-a78f-4aec-bb86-aa80e6251312",
+    "userId": 676576299,
+    "username": "giannu777",
+    "firstName": "Trelea",
+    "points": 0,
+    "partitionKey": "676576299"
+  },
+  {
+    "id": "c45321cb-f791-44f6-8048-b2357f42a74c",
+    "userId": 379868280,
+    "username": "iaco6990",
+    "firstName": "Mattia",
+    "points": 0,
+    "partitionKey": "379868280"
+  },
+  {
+    "id": "99daed30-1097-4e42-bda4-803d03efc4d1",
+    "userId": 1373359163,
+    "username": "martibk8",
+    "firstName": "Martina",
+    "points": 0,
+    "partitionKey": "1373359163"
+  },
+  {
+    "id": "30d3f0e8-2b4c-47e4-bf34-8257b9f60c2e",
+    "userId": 6385312976,
+    "username": "gioya_1",
+    "firstName": "Gioia🩷",
+    "points": 0,
+    "partitionKey": "6385312976"
+  },
+  {
+    "id": "2c4d16a7-f800-4528-861a-1b366504f236",
+    "userId": 1836451459,
+    "username": "mary_05_00",
+    "firstName": "mary",
+    "points": 0,
+    "partitionKey": "1836451459"
+  },
+  {
+    "id": "1f953c40-01a8-4734-a422-fdfe2dd0be91",
+    "userId": 496574469,
+    "username": "lollino89",
+    "firstName": "Lollo89",
+    "points": 0,
+    "partitionKey": "496574469"
+  },
+  {
+    "id": "f967b980-16d6-44e9-acc7-4122e06e452a",
+    "userId": 1094147702,
+    "username": "martyna290",
+    "firstName": "𝑀𝑎𝑟𝑡𝑦𝑛𝑎🤍",
+    "points": 0,
+    "partitionKey": "1094147702"
+  },
+  {
+    "id": "621d69e0-cf68-4bd0-ba68-1be24d03de8b",
+    "userId": 1318580593,
+    "username": "giuliet1501",
+    "firstName": "Giulia✨️",
+    "points": 0,
+    "partitionKey": "1318580593"
+  },
+  {
+    "id": "73422a93-98e5-4eb1-946b-8aa2d1a92334",
+    "userId": 1208150569,
+    "username": "den21ned",
+    "firstName": "Den",
+    "points": 10,
+    "partitionKey": "1208150569"
+  },
+  {
+    "id": "07d1c134-c0e2-4b76-94dc-150f05491de1",
+    "userId": 881593825,
+    "username": "lillyferr",
+    "firstName": "Lilly",
+    "points": 160,
+    "partitionKey": "881593825"
+  },
+  {
+    "id": "1f63990a-674a-4100-9bac-27f6816c7f0b",
+    "userId": 1896866746,
+    "username": "mattiaaaa0",
+    "firstName": "Mattia😴",
+    "points": 5,
+    "partitionKey": "1896866746"
+  },
+  {
+    "id": "95bd9333-9f69-4e0a-b3fe-77bb21f01f67",
+    "userId": 6863078968,
+    "username": "elettra22",
+    "firstName": "Laura",
+    "points": 0,
+    "partitionKey": "6863078968"
+  },
+  {
+    "id": "d6b04b53-7af0-4cb4-af7a-f772e5c3dc52",
+    "userId": 1276581242,
+    "username": "ciaosonobello22",
+    "firstName": "Bru",
+    "points": 0,
+    "partitionKey": "1276581242"
+  },
+  {
+    "id": "eed70953-94f8-4248-948a-9e9bb9ccc5ac",
+    "userId": 424227405,
+    "username": "gnun4",
+    "firstName": "Nunzia",
+    "points": 0,
+    "partitionKey": "424227405"
+  },
+  {
+    "id": "825b88aa-13c3-4ce6-81ae-5731fddb0474",
+    "userId": 806992184,
+    "username": "ste_brontolo",
+    "firstName": "✨•$𝐭Σ𝑓@Ŋʘ•✨",
+    "points": 0,
+    "partitionKey": "806992184"
+  },
+  {
+    "id": "69891331-3d8e-49ef-9afb-dc91deaf59b6",
+    "userId": 1228560843,
+    "username": "masekin89",
+    "firstName": "Mery",
+    "points": 0,
+    "partitionKey": "1228560843"
+  },
+  {
+    "id": "71e73103-0988-4ea2-8e23-47cc0303d079",
+    "userId": 6543016308,
+    "username": "ylenia199836",
+    "firstName": "Ylenia",
+    "points": 0,
+    "partitionKey": "6543016308"
+  },
+  {
+    "id": "adbccd88-7cf2-44b9-af0a-9e587e57ab0f",
+    "userId": 7600231735,
+    "username": "noegro",
+    "firstName": "Noemi",
+    "points": 10,
+    "partitionKey": "7600231735"
+  },
+  {
+    "id": "40d61105-7793-4957-9b91-d5af7c10351b",
+    "userId": 1296438839,
+    "username": "teresasci5",
+    "firstName": "Teresa",
+    "points": 0,
+    "partitionKey": "1296438839"
+  },
+  {
+    "id": "d5b7e4b5-e9cc-4afb-be1f-0912b851bb2c",
+    "userId": 983732922,
+    "username": "simonafiamma",
+    "firstName": "Simona",
+    "points": 0,
+    "partitionKey": "983732922"
+  },
+  {
+    "id": "9d903644-5383-453f-86ee-0a587b53327d",
+    "userId": 655518121,
+    "username": "brigidaclemente",
+    "firstName": "Brigida",
+    "points": 0,
+    "partitionKey": "655518121"
+  },
+  {
+    "id": "6e26300b-2633-43fb-8b6e-d6e178e40d4f",
+    "userId": 5067995248,
+    "username": "giuse282",
+    "firstName": "Giuse",
+    "points": 0,
+    "partitionKey": "5067995248"
+  },
+  {
+    "id": "3fbc6f2d-9baf-4d7d-a2e2-c7203c70e16c",
+    "userId": 936617810,
+    "username": "maxine_14",
+    "firstName": "Maxine",
+    "points": 0,
+    "partitionKey": "936617810"
+  },
+  {
+    "id": "fdac55fb-f216-4628-9a29-f9896bf0f68c",
+    "userId": 5829020391,
+    "username": "biaaa003",
+    "firstName": "bi💨",
+    "points": 0,
+    "partitionKey": "5829020391"
+  },
+  {
+    "id": "d5e1b812-ac08-4450-9c14-4d9dfb230a2c",
+    "userId": 854965731,
+    "username": "mariabalinzo",
+    "firstName": "Maria",
+    "points": 0,
+    "partitionKey": "854965731"
+  },
+  {
+    "id": "5aa5073e-07b5-4d12-ad45-783bad0285d2",
+    "userId": 6311600446,
+    "username": "uspass82",
+    "firstName": "Valentina",
+    "points": 0,
+    "partitionKey": "6311600446"
+  },
+  {
+    "id": "f26586b8-60b4-4ab4-a4a2-58570922a90c",
+    "userId": 8449618416,
+    "username": "samu1794",
+    "firstName": "Super",
+    "points": 0,
+    "partitionKey": "8449618416"
+  },
+  {
+    "id": "e932dac0-9781-4b07-a87b-a3b432651cad",
+    "userId": 7625952032,
+    "username": "kiccaho",
+    "firstName": "Kiccaho",
+    "points": 0,
+    "partitionKey": "7625952032"
+  },
+  {
+    "id": "3baca5c7-2bb3-4a95-9604-9e1dfcd17777",
+    "userId": 6392245988,
+    "username": "giada1922",
+    "firstName": "Fede",
+    "points": 0,
+    "partitionKey": "6392245988"
+  },
+  {
+    "id": "5c5d5c8c-25a5-401e-b0c0-158dcd368f9b",
+    "userId": 5968567844,
+    "username": "benedetttaaa",
+    "firstName": "Benna",
+    "points": 5,
+    "partitionKey": "5968567844"
+  },
+  {
+    "id": "7c5acbf6-5508-4043-8f29-9a71bcbb6142",
+    "userId": 7211807463,
+    "username": "tmwuzhere",
+    "firstName": "Dan",
+    "points": 0,
+    "partitionKey": "7211807463"
+  },
+  {
+    "id": "00167059-482b-4683-9a53-0dcf81b3383d",
+    "userId": 185603584,
+    "username": "jenny0703",
+    "firstName": "Gege'",
+    "points": 0,
+    "partitionKey": "185603584"
+  },
+  {
+    "id": "3a7a7de3-97f6-4d85-853d-c8ef1bab97af",
+    "userId": 1436610047,
+    "username": "angymp77",
+    "firstName": "Angela",
+    "points": 0,
+    "partitionKey": "1436610047"
+  },
+  {
+    "id": "9735e2d4-52dd-4cba-8083-0cadaad98509",
+    "userId": 7891063585,
+    "username": "alemanna04",
+    "firstName": "Alessandro",
+    "points": 0,
+    "partitionKey": "7891063585"
+  },
+  {
+    "id": "6bb1dbf4-94ab-4463-a74e-770d6c2212e2",
+    "userId": 6658100255,
+    "username": "valerio2599",
+    "firstName": "Valerio",
+    "points": 0,
+    "partitionKey": "6658100255"
+  },
+  {
+    "id": "d779b1d1-447f-4e1c-b041-467522ea6917",
+    "userId": 6778478504,
+    "username": "irisellee",
+    "firstName": "♡𝙄rⲓ᥉♡",
+    "points": 5,
+    "partitionKey": "6778478504"
+  },
+  {
+    "id": "60fcc81e-a10b-482f-9a80-5566fc0a0369",
+    "userId": 7668807886,
+    "username": "agneseeeeeeeeeeeeeee",
+    "firstName": "Agnese",
+    "points": 10,
+    "partitionKey": "7668807886"
+  },
+  {
+    "id": "9e6d962b-caac-450e-b95e-42115cc3941a",
+    "userId": 2089472380,
+    "username": "sabrina_chimera",
+    "firstName": "Sabrina",
+    "points": 0,
+    "partitionKey": "2089472380"
+  },
+  {
+    "id": "efc8b83f-e3e4-45aa-8cb3-d7cbaec7657f",
+    "userId": 8430856814,
+    "username": "dadita001",
+    "firstName": "Witam",
+    "points": 0,
+    "partitionKey": "8430856814"
+  },
+  {
+    "id": "a0ce86e2-b3ce-4b93-b134-57048e60694c",
+    "userId": 1606548199,
+    "username": "p0json",
+    "firstName": "alexandra",
+    "points": 5,
+    "partitionKey": "1606548199"
+  },
+  {
+    "id": "ebb10dd6-d3f5-4413-abf4-8b978d214bae",
+    "userId": 936486266,
+    "username": "checca_24",
+    "firstName": "Franci",
+    "points": 0,
+    "partitionKey": "936486266"
+  },
+  {
+    "id": "7e1864a1-c284-4f10-aae1-bb9a5d060c93",
+    "userId": 59560708,
+    "username": "dp_410",
+    "firstName": "dani",
+    "points": 15,
+    "partitionKey": "59560708"
+  },
+  {
+    "id": "0a020ad0-73f9-477a-a86c-3e30c3032165",
+    "userId": 5015621873,
+    "username": "thomas_gallo08",
+    "firstName": "Sarà",
+    "points": 0,
+    "partitionKey": "5015621873"
+  },
+  {
+    "id": "a62222c8-7d6d-487a-815e-d0e7e37241f3",
+    "userId": 184134448,
+    "username": "xxsteve80xx",
+    "firstName": "꧁༒☬  𝕊𝕋𝔼𝔽𝔸ℕ𝕆  ☬༒꧂",
+    "points": 0,
+    "partitionKey": "184134448"
+  },
+  {
+    "id": "0b3d15c9-367f-4907-be0f-6fcb03c4eb83",
+    "userId": 7980287251,
+    "username": "stefanosib",
+    "firstName": "ste",
+    "points": 0,
+    "partitionKey": "7980287251"
+  },
+  {
+    "id": "28ce03d2-bf99-40d1-b03e-e771074677bc",
+    "userId": 539761089,
+    "username": "facocerinho",
+    "firstName": "Facocerinho",
+    "points": 0,
+    "partitionKey": "539761089"
+  },
+  {
+    "id": "5162856d-ce22-478a-912f-7731cb325572",
+    "userId": 5922890497,
+    "username": "tommycruc1974",
+    "firstName": "Tommy",
+    "points": 0,
+    "partitionKey": "5922890497"
+  },
+  {
+    "id": "81ee13a3-3f18-4d63-a324-69a1b3f5ead8",
+    "userId": 1595367657,
+    "username": "giunic",
+    "firstName": "giusy❤️",
+    "points": 0,
+    "partitionKey": "1595367657"
+  },
+  {
+    "id": "8c628f3c-4059-4b11-ba73-ba7ccea7710a",
+    "userId": 622114022,
+    "username": "monopoly877",
+    "firstName": "A",
+    "points": 0,
+    "partitionKey": "622114022"
+  },
+  {
+    "id": "a03d9ac9-3d1f-40af-bc8f-22fb9ba66ea7",
+    "userId": 5819248997,
+    "username": "zucca2209",
+    "firstName": "Luciano",
+    "points": 10,
+    "partitionKey": "5819248997"
+  },
+  {
+    "id": "83dac16c-63f9-4019-bb09-f82a7370ed9e",
+    "userId": 6525219540,
+    "username": "larona01",
+    "firstName": "Lara",
+    "points": 5,
+    "partitionKey": "6525219540"
+  },
+  {
+    "id": "473241c5-b8d0-4d4f-9e81-e34b5c28ff9f",
+    "userId": 6854134697,
+    "username": "bar_by_stelli_na",
+    "firstName": "Barby",
+    "points": 5,
+    "partitionKey": "6854134697"
+  },
+  {
+    "id": "db1b19b0-3277-4276-9256-93cb8963afc5",
+    "userId": 916093717,
+    "username": "chiaraepiscopo",
+    "firstName": "Chiara",
+    "points": 0,
+    "partitionKey": "916093717"
+  },
+  {
+    "id": "9b493ab7-a867-41ba-a0fe-8395c1802bbe",
+    "userId": 5380534499,
+    "username": "argor78roma",
+    "firstName": "Argor78roma",
+    "points": 0,
+    "partitionKey": "5380534499"
+  },
+  {
+    "id": "e86ef2ab-aa8f-421a-a0c4-61820134fb54",
+    "userId": 6686527252,
+    "username": "osgrall",
+    "firstName": "o",
+    "points": 50,
+    "partitionKey": "6686527252"
+  },
+  {
+    "id": "ab2ff2a0-dd7c-4ea1-bf0a-61c344fd1d8f",
+    "userId": 5829179777,
+    "username": "freyja_83",
+    "firstName": "Freyja",
+    "points": 0,
+    "partitionKey": "5829179777"
+  },
+  {
+    "id": "de544b9d-5e7e-4356-a18e-778b9b0666f4",
+    "userId": 6584021781,
+    "username": "icio26",
+    "firstName": "Il Maury",
+    "points": 0,
+    "partitionKey": "6584021781"
+  },
+  {
+    "id": "9217ed17-27d6-4b2b-95fc-3a2a6cc6ba02",
+    "userId": 1059046314,
+    "username": "siignorellii",
+    "firstName": "Gemma",
+    "points": 0,
+    "partitionKey": "1059046314"
+  },
+  {
+    "id": "30371e07-8d78-42dd-817a-1e8b8523fdb6",
+    "userId": 6180904857,
+    "username": "naty5687",
+    "firstName": "Naty",
+    "points": 0,
+    "partitionKey": "6180904857"
+  },
+  {
+    "id": "68cc7f36-bb41-4b78-a9a0-08feff60a954",
+    "userId": 6164666980,
+    "username": "an83gy",
+    "firstName": "🌸Angy🌺",
+    "points": 0,
+    "partitionKey": "6164666980"
+  },
+  {
+    "id": "cff1eb4f-4aca-4822-b9b2-cdffdb66f12d",
+    "userId": 359768803,
+    "username": "theking8990",
+    "firstName": "Theking889",
+    "points": 0,
+    "partitionKey": "359768803"
+  },
+  {
+    "id": "41e36724-e0a9-4766-83ba-4e4b9a7c0c69",
+    "userId": 7025980441,
+    "username": "massimo1421",
+    "firstName": "M⏳",
+    "points": 0,
+    "partitionKey": "7025980441"
+  },
+  {
+    "id": "32b0393c-d061-4d9e-ae5f-8273430ab90c",
+    "userId": 625856007,
+    "username": "ange5431",
+    "firstName": "Angelo",
+    "points": 0,
+    "partitionKey": "625856007"
+  },
+  {
+    "id": "59cdc8a5-7037-4e75-8baf-679d3f8b1fc6",
+    "userId": 633939842,
+    "username": "davde7",
+    "firstName": "Davide🪃",
+    "points": 0,
+    "partitionKey": "633939842"
+  },
+  {
+    "id": "6ddd70eb-585f-4297-b355-97bfaa65217a",
+    "userId": 736525577,
+    "username": "fede_mign",
+    "firstName": "sabrina",
+    "points": 0,
+    "partitionKey": "736525577"
+  },
+  {
+    "id": "d04d8bae-226b-4e16-bc7a-bbd965ec3c61",
+    "userId": 6546318994,
+    "username": "nicoleepp",
+    "firstName": "Nicolee",
+    "points": 0,
+    "partitionKey": "6546318994"
+  }
+]

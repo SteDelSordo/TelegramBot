@@ -27,30 +27,27 @@ namespace TelegramBotClassifica
                 })
                 .ConfigureServices((hostContext, services) =>
                 {
-                    // Legge la configurazione del bot (token, admin IDs, group ID)
                     var botConfiguration = hostContext.Configuration.GetSection("BotConfiguration").Get<BotConfiguration>();
                     if (botConfiguration == null)
                     {
-                        throw new System.Exception("BotConfiguration section not found or invalid in appsettings.json or environment variables.");
+                        throw new System.Exception("BotConfiguration section not found.");
                     }
 
-                    // Registra l'istanza di ITelegramBotClient come Singleton
-                    services.AddSingleton<ITelegramBotClient>(new TelegramBotClient(botConfiguration.BotToken));
-
-                    // Registra il servizio del bot come Hosted Service
-                    // Hosted Service è un servizio che gira in background per tutta la vita dell'applicazione
-                    services.AddHostedService<BotService>();
-
-                    // Registra la configurazione del bot come Singleton
+                    // Registra la configurazione del bot
                     services.AddSingleton(botConfiguration);
 
-                    services.AddSingleton<ICosmosDbService, CosmosDbService>();
+                    // Registra il client di Telegram
+                    services.AddSingleton<ITelegramBotClient>(new TelegramBotClient(botConfiguration.BotToken));
 
+                    // NUOVO: Registra il DbContext per SQLite
+                    services.AddDbContext<BotDbContext>(options =>
+                        options.UseSqlite(hostContext.Configuration.GetConnectionString("DefaultConnection") ?? "Data Source=classifica.db"));
 
+                    // NUOVO: Registra il nostro nuovo servizio dati
+                    services.AddSingleton<IDataService, SqliteDbService>();
 
-                    // Qui registreremo il servizio per il database Cosmos DB
-                    // Per ora lo lasciamo vuoto, lo aggiungeremo nel prossimo step
-                    // services.AddSingleton<ICosmosDbService, CosmosDbService>();
+                    // Registra il servizio del bot come Hosted Service
+                    services.AddHostedService<BotService>();
                 });
     }
 }

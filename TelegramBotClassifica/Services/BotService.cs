@@ -5,13 +5,13 @@ using Telegram.Bot.Polling;
 using Telegram.Bot.Types;
 using Telegram.Bot.Types.Enums;
 using TelegramBotClassifica.Configuration;
-using TelegramBotClassifica.Models; // Importa i modelli
+using TelegramBotClassifica.Models;
 using System;
-using System.Collections.Generic; // Aggiungi per List
-using System.Linq; // Aggiungi per Linq
+using System.Collections.Generic;
+using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-using System.Text; // Per StringBuilder
+using System.Text;
 
 namespace TelegramBotClassifica.Services
 {
@@ -20,22 +20,25 @@ namespace TelegramBotClassifica.Services
         private readonly ITelegramBotClient _botClient;
         private readonly ILogger<BotService> _logger;
         private readonly BotConfiguration _botConfiguration;
-        private readonly ICosmosDbService _cosmosDbService; // Aggiungi questa riga
+        // MODIFICA #1: Sostituiamo il vecchio servizio CosmosDB con la nostra nuova interfaccia generica.
+        private readonly IDataService _dataService;
 
-        public BotService(ITelegramBotClient botClient, ILogger<BotService> logger, BotConfiguration botConfiguration, ICosmosDbService cosmosDbService)
+        // MODIFICA #2: Aggiorniamo il costruttore per ricevere IDataService.
+        public BotService(ITelegramBotClient botClient, ILogger<BotService> logger, BotConfiguration botConfiguration, IDataService dataService)
         {
             _botClient = botClient;
             _logger = logger;
             _botConfiguration = botConfiguration;
-            _cosmosDbService = cosmosDbService; // Inietta il servizio Cosmos DB
+            _dataService = dataService; // Inietta il nuovo servizio dati (SQLite)
         }
 
         protected override async Task ExecuteAsync(CancellationToken stoppingToken)
         {
             _logger.LogInformation("BotService is starting.");
 
-            // Inizializza il database Cosmos DB all'avvio del bot
-            await _cosmosDbService.InitializeAsync(); // Chiama l'inizializzazione del DB
+            // MODIFICA #3: Chiamiamo il metodo di inizializzazione del nuovo servizio.
+            // Per SQLite, questo creerà il file .db e applicherà le migrazioni se necessario.
+            await _dataService.InitializeAsync();
 
             var receiverOptions = new ReceiverOptions
             {
@@ -67,28 +70,24 @@ namespace TelegramBotClassifica.Services
                 return;
             }
 
-            await _cosmosDbService.UpdateOrCreateUserAsync(msg.From.Id, msg.From.Username, msg.From.FirstName);
+            // MODIFICA #4: Tutte le chiamate a _cosmosDbService sono state sostituite con _dataService.
+            // La logica non cambia, perché l'interfaccia ha gli stessi metodi!
+            await _dataService.UpdateOrCreateUserAsync(msg.From.Id, msg.From.Username, msg.From.FirstName);
 
-            // NUOVO: Variabile per controllare se dobbiamo inviare un messaggio di risposta
             bool shouldSendResponse = false;
-            var msgText = ""; // Inizializziamo vuota
+            var msgText = "";
 
-            // NON risponde ai messaggi nei gruppi che non sono comandi.
-            // Se il messaggio NON è privato O NON inizia con '/', allora ignoriamo il comando.
             if (msg.Chat.Type != ChatType.Private && msg.Text?.StartsWith("/") != true)
             {
-                // È un messaggio normale in un gruppo, lo logghiamo ma non rispondiamo.
                 _logger.LogInformation("Received non-command message '{text}' from group {chatId}.", msg.Text, msg.Chat.Id);
-                return; // Ignora del tutto i messaggi non-comando nei gruppi
+                return;
             }
-
 
             _logger.LogInformation("Received message '{text}' from {chatId}.", msg.Text, msg.Chat.Id);
 
             string command = string.Empty;
             string arguments = string.Empty;
 
-            // Se è un comando (quindi inizia con '/')
             if (msg.Text?.StartsWith("/") == true)
             {
                 var parts = msg.Text.Split(' ', 2);
@@ -98,11 +97,9 @@ namespace TelegramBotClassifica.Services
                     arguments = parts[1];
                 }
 
-                // Qui gestiamo i comandi. Tutte le risposte verranno messe in msgText.
                 switch (command)
                 {
                     case "start":
-                        // Questo comando dovrebbe funzionare solo in privato
                         if (msg.Chat.Type == ChatType.Private)
                         {
                             msgText = "Ciao! Sono il bot della classifica. Usa /ap <ID_utente_o_username> <coin> e /classifica per vedere i risultati. Tutti i comandi funzionano solo qui in privato.";
@@ -111,7 +108,6 @@ namespace TelegramBotClassifica.Services
                         break;
 
                     case "ap":
-                        // Questo comando funziona solo in privato e solo per admin
                         if (msg.Chat.Type == ChatType.Private && IsUserAuthorized(msg.From.Id))
                         {
                             var args = arguments.Split(' ', 2);
@@ -130,7 +126,6 @@ namespace TelegramBotClassifica.Services
                                 }
                                 else
                                 {
-                                    // Log per debugging
                                     _logger.LogInformation("Comando /ap ricevuto: targetUser='{Target}', coins={Coins}", targetUserIdentifier, coins);
 
                                     long targetUserID = 0;
@@ -140,7 +135,8 @@ namespace TelegramBotClassifica.Services
                                     }
                                     else
                                     {
-                                        targetUserID = await _cosmosDbService.GetUserIdByUsernameAsync(targetUserIdentifier);
+                                        // MODIFICA #4 (esempio)
+                                        targetUserID = await _dataService.GetUserIdByUsernameAsync(targetUserIdentifier);
                                         if (targetUserID == 0)
                                         {
                                             msgText = $"❌ Username '{targetUserIdentifier}' non trovato nel database. Assicurati che l'utente abbia già interagito con il bot o usa l'ID numerico.";
@@ -153,23 +149,20 @@ namespace TelegramBotClassifica.Services
                                     {
                                         try
                                         {
-                                            // Recupera i dati esistenti dell'utente per preservare username e firstName
-                                            var existingUser = await _cosmosDbService.GetUserPointsAsync(targetUserID);
-
+                                            // MODIFICA #4 (esempio)
+                                            var existingUser = await _dataService.GetUserPointsAsync(targetUserID);
                                             string? preservedUsername = existingUser?.Username;
                                             string? preservedFirstName = existingUser?.FirstName;
 
-                                            // Se l'utente è stato identificato tramite username, preservalo
                                             if (!long.TryParse(targetUserIdentifier, out _))
                                             {
-                                                // L'identificatore era un username, assicuriamoci di preservarlo
                                                 preservedUsername = targetUserIdentifier.ToLowerInvariant().TrimStart('@');
                                             }
 
-                                            await _cosmosDbService.AddOrUpdateUserPointsAsync(targetUserID, preservedUsername, preservedFirstName, coins);
+                                            // MODIFICA #4 (esempio)
+                                            await _dataService.AddOrUpdateUserPointsAsync(targetUserID, preservedUsername, preservedFirstName, coins);
                                             string displayName = !string.IsNullOrWhiteSpace(preservedUsername) ? $"@{preservedUsername}" : targetUserID.ToString();
 
-                                            // Messaggio più descrittivo per aggiunte/rimozioni
                                             if (coins > 0)
                                             {
                                                 msgText = $"✅ Aggiunti {coins} coin all'utente {displayName}. Totale coin aggiornato.";
@@ -202,10 +195,10 @@ namespace TelegramBotClassifica.Services
                         break;
 
                     case "classifica":
-                        // Questo comando dovrebbe funzionare solo in privato
                         if (msg.Chat.Type == ChatType.Private)
                         {
-                            var leaderboard = await _cosmosDbService.GetLeaderboardAsync();
+                            // MODIFICA #4 (esempio)
+                            var leaderboard = await _dataService.GetLeaderboardAsync();
                             if (!leaderboard.Any())
                             {
                                 msgText = "La classifica è vuota o nessuno ha ancora coin! Inizia ad aggiungerli.";
@@ -213,28 +206,20 @@ namespace TelegramBotClassifica.Services
                             else
                             {
                                 var sb = new StringBuilder();
-                                // AGGIUNTA QUI: Data e ora
                                 sb.AppendLine($"🏆 Classifica Attuale ({DateTime.Now:dd/MM/yyyy HH:mm:ss})\n");
 
                                 int rank = 1;
                                 foreach (var entry in leaderboard)
                                 {
                                     string displayName;
-
-                                    _logger.LogInformation("Processing leaderboard entry: UserId={UserId}, Username='{Username}', FirstName='{FirstName}', Points={Points}, FinalDisplayName='{FinalDisplayName}'",
-                                        entry.UserId, entry.Username ?? "NULL", entry.FirstName ?? "NULL", entry.Points, entry.Username ?? entry.FirstName ?? entry.UserId.ToString()); // Updated log to reflect final display name logic.
-
-                                    // Priorità 1: Username (se non è vuoto o null)
                                     if (!string.IsNullOrWhiteSpace(entry.Username))
                                     {
                                         displayName = "@" + entry.Username;
                                     }
-                                    // Priorità 2: FirstName (solo se Username non c'è)
                                     else if (!string.IsNullOrWhiteSpace(entry.FirstName))
                                     {
                                         displayName = entry.FirstName;
                                     }
-                                    // Priorità 3: UserId (se Username e FirstName non ci sono)
                                     else
                                     {
                                         displayName = $"ID: {entry.UserId}";
@@ -250,12 +235,12 @@ namespace TelegramBotClassifica.Services
                         break;
 
                     case "resetclassifica":
-                        // Questo comando funziona solo in privato e solo per admin
                         if (msg.Chat.Type == ChatType.Private && IsUserAuthorized(msg.From.Id))
                         {
                             try
                             {
-                                await _cosmosDbService.ResetLeaderboardAsync();
+                                // MODIFICA #4 (esempio)
+                                await _dataService.ResetLeaderboardAsync();
                                 msgText = "Classifica resettata con successo!";
                             }
                             catch (Exception ex)
@@ -277,16 +262,12 @@ namespace TelegramBotClassifica.Services
                         {
                             try
                             {
-                                var users = await _cosmosDbService.ExportKnownUsersAsync();
+                                // MODIFICA #4 (esempio)
+                                var users = await _dataService.ExportKnownUsersAsync();
                                 var json = Newtonsoft.Json.JsonConvert.SerializeObject(users, Newtonsoft.Json.Formatting.Indented);
 
-                                // MODIFICA QUI: Rimuoviamo la formattazione Markdown diretta e la logica di invio JSON
-                                // Per i test, logghiamo il JSON e inviamo un messaggio di conferma semplice.
                                 _logger.LogInformation("Esportazione utenti JSON: {JsonData}", json);
                                 msgText = "Utenti conosciuti esportati. Controlla i log della console per il JSON completo.";
-
-                                // Se il JSON è troppo lungo, il log sarà comunque completo,
-                                // ma eviteremo problemi di parsing o troncamento su Telegram.
                                 shouldSendResponse = true;
                             }
                             catch (Exception ex)
@@ -304,7 +285,6 @@ namespace TelegramBotClassifica.Services
                         break;
 
                     default:
-                        // Se è un comando sconosciuto, risponde solo in privato
                         if (msg.Chat.Type == ChatType.Private)
                         {
                             msgText = "Comando sconosciuto.";
@@ -314,14 +294,11 @@ namespace TelegramBotClassifica.Services
                 }
             }
 
-            // Invia il messaggio solo se shouldSendResponse è true e msgText non è vuoto
             if (shouldSendResponse && !string.IsNullOrEmpty(msgText))
             {
                 await botClient.SendTextMessageAsync(
                     chatId: msg.Chat.Id,
                     text: msgText,
-                    // MODIFICA QUI: Rimuovi o commenta la riga parseMode: ParseMode.Markdown
-                    // parseMode: ParseMode.Markdown, // <--- Commenta o rimuovi questa riga
                     cancellationToken: cancellationToken);
             }
         }

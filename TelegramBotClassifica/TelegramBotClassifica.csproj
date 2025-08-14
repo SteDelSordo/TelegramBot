@@ -1,4 +1,4 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <OutputType>Exe</OutputType>
@@ -18,10 +18,11 @@
     <PackageReference Include="Telegram.Bot" Version="19.0.0" />
   </ItemGroup>
 
-  <!-- LA CORREZIONE È QUI SOTTO -->
   <ItemGroup>
-    <!-- Questa sezione dice a .NET di copiare il file JSON nella cartella di output -->
-    <!-- così il programma potrà trovarlo e leggerlo quando parte su Render. -->
+    <FrameworkReference Include="Microsoft.AspNetCore.App" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Content Include="users_backup.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>

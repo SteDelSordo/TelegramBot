@@ -1,26 +1,24 @@
-# Usa un'immagine SDK di .NET 8.0 per la fase di build
+# Fase 1: Build dell'applicazione
+# Usiamo l'SDK di .NET 8 per avere tutti gli strumenti di compilazione.
 FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 WORKDIR /src
 
-# Copia il file del progetto e ripristina le dipendenze
-# CORREZIONE QUI: Rimuoviamo il prefisso della cartella
-COPY ["TelegramBotClassifica.csproj", "./"]
+# Copia il file di progetto (.csproj) e ripristina i pacchetti NuGet.
+# Questo strato viene messo in cache da Docker, velocizzando le build future se le dipendenze non cambiano.
+COPY TelegramBotClassifica.csproj .
 RUN dotnet restore "TelegramBotClassifica.csproj"
 
-# Copia tutti i file sorgente e pubblica l'applicazione
+# Copia tutto il resto del codice sorgente e dei file (incluso users_backup.json)
 COPY . .
-WORKDIR "/src"
-RUN dotnet publish "TelegramBotClassifica.csproj" -c Release -o /app/publish /p:UseAppHost=false
+RUN dotnet publish "TelegramBotClassifica.csproj" -c Release -o /app/publish
 
-# Usa un'immagine runtime di ASP.NET Core 8.0 più leggera per l'esecuzione finale
-FROM mcr.microsoft.com/dotnet/aspnet:8.0 AS final
+# Fase 2: Creazione dell'immagine finale
+# Usiamo l'immagine runtime di ASP.NET, molto più leggera dell'SDK, per l'esecuzione.
+FROM mcr.microsoft.com/dotnet/aspnet:8.0
 WORKDIR /app
 
-# Copia i file pubblicati dall'immagine di build
+# Copia solo l'applicazione pubblicata dalla fase di build.
 COPY --from=build /app/publish .
 
-# Espone la porta su cui il bot è in ascolto
-EXPOSE 8080
-
-# Comando di avvio dell'applicazione
+# Comando che verrà eseguito all'avvio del container.
 ENTRYPOINT ["dotnet", "TelegramBotClassifica.dll"]

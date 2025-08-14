@@ -12,6 +12,7 @@ RUN dotnet restore
 
 # Ora copia tutto il resto (codice, file json, etc.)
 COPY . .
+# Il comando publish crea l'output nella cartella /app/publish
 RUN dotnet publish -c Release -o /app/publish
 
 # Fase 2: Creazione dell'immagine finale
@@ -19,8 +20,8 @@ RUN dotnet publish -c Release -o /app/publish
 FROM mcr.microsoft.com/dotnet/aspnet:8.0
 WORKDIR /app
 
-# Copia solo l'applicazione pubblicata dalla fase di build.
-COPY --from=build /src/app/publish .
+# CORREZIONE FINALE: Copiamo dalla cartella /app/publish creata nella fase di build.
+COPY --from=build /app/publish .
 
 # Comando di avvio.
 ENTRYPOINT ["dotnet", "TelegramBotClassifica.dll"]

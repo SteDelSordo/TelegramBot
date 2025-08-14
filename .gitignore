@@ -1,0 +1,40 @@
+# Dotnet build outputs
+bin/
+obj/
+*.user
+*.suo
+
+# VS Code files
+.vscode/
+*.code-workspace
+
+# Rider files
+.idea/
+
+# User secrets
+secrets.json
+
+# SQLite database file(s)
+*.db
+*.db-shm
+*.db-wal
+
+# App settings (local, non-versioned)
+appsettings.Development.json
+appsettings.Local.json
+
+# Exclude production secrets (optional, if not versioning your prod config)
+appsettings.json
+
+# Logs
+*.log
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# NuGet packages
+*.nupkg
+packages/
+project.lock.json
+# End of file

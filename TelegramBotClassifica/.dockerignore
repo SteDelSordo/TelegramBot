@@ -1,0 +1,16 @@
+# General .NET files
+bin/
+obj/
+*.csproj.user
+*.db
+*.suo
+.vs/
+.vscode/
+
+# Environment files
+.env
+appsettings.Development.json # Se usi un appsettings.Development.json locale
+
+# Docker-specific files
+Dockerfile
+.dockerignore

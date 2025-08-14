@@ -3,13 +3,15 @@
 FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 WORKDIR /src
 
-# Copia il file di progetto (.csproj) e ripristina i pacchetti NuGet.
-# Questo strato viene messo in cache da Docker, velocizzando le build future se le dipendenze non cambiano.
-COPY TelegramBotClassifica.csproj .
-RUN dotnet restore "TelegramBotClassifica.csproj"
+# CORREZIONE #1: Specifichiamo il percorso completo del file .csproj
+# partendo dalla root del repository.
+COPY ["TelegramBotClassifica/TelegramBotClassifica.csproj", "TelegramBotClassifica/"]
+RUN dotnet restore "TelegramBotClassifica/TelegramBotClassifica.csproj"
 
-# Copia tutto il resto del codice sorgente e dei file (incluso users_backup.json)
-COPY . .
+# CORREZIONE #2: Copiamo il contenuto della sottocartella nella sua controparte
+# all'interno del container.
+COPY ["TelegramBotClassifica/", "TelegramBotClassifica/"]
+WORKDIR "/src/TelegramBotClassifica"
 RUN dotnet publish "TelegramBotClassifica.csproj" -c Release -o /app/publish
 
 # Fase 2: Creazione dell'immagine finale

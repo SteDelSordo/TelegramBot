@@ -3,24 +3,24 @@
 FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 WORKDIR /src
 
-# CORREZIONE #1: Specifichiamo il percorso completo del file .csproj
-# partendo dalla root del repository.
-COPY ["TelegramBotClassifica/TelegramBotClassifica.csproj", "TelegramBotClassifica/"]
-RUN dotnet restore "TelegramBotClassifica/TelegramBotClassifica.csproj"
+# Dato che la "Root Directory" su Render è impostata, il nostro contesto
+# di build è già DENTRO la cartella "TelegramBotClassifica".
 
-# CORREZIONE #2: Copiamo il contenuto della sottocartella nella sua controparte
-# all'interno del container.
-COPY ["TelegramBotClassifica/", "TelegramBotClassifica/"]
-WORKDIR "/src/TelegramBotClassifica"
-RUN dotnet publish "TelegramBotClassifica.csproj" -c Release -o /app/publish
+# Copia prima il file .csproj per sfruttare la cache di Docker.
+COPY *.csproj .
+RUN dotnet restore
+
+# Ora copia tutto il resto (codice, file json, etc.)
+COPY . .
+RUN dotnet publish -c Release -o /app/publish
 
 # Fase 2: Creazione dell'immagine finale
-# Usiamo l'immagine runtime di ASP.NET, molto più leggera dell'SDK, per l'esecuzione.
+# Usiamo l'immagine runtime, molto più leggera.
 FROM mcr.microsoft.com/dotnet/aspnet:8.0
 WORKDIR /app
 
 # Copia solo l'applicazione pubblicata dalla fase di build.
-COPY --from=build /app/publish .
+COPY --from=build /src/app/publish .
 
-# Comando che verrà eseguito all'avvio del container.
+# Comando di avvio.
 ENTRYPOINT ["dotnet", "TelegramBotClassifica.dll"]

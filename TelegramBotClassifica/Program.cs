@@ -1,13 +1,11 @@
-﻿// Program.cs
-using Microsoft.Extensions.Hosting;
+﻿using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Configuration;
 using System.Threading.Tasks;
 using Telegram.Bot;
 using TelegramBotClassifica.Services;
 using TelegramBotClassifica.Configuration;
-using TelegramBotClassifica.Models;
-using Microsoft.EntityFrameworkCore; // <-- LA CORREZIONE È QUI! Questo using è fondamentale.
+using Microsoft.EntityFrameworkCore;
 
 namespace TelegramBotClassifica
 {
@@ -27,17 +25,8 @@ namespace TelegramBotClassifica
                 })
                 .ConfigureServices((hostContext, services) =>
                 {
-                    var botConfiguration = hostContext.Configuration.GetSection("BotConfiguration").Get<BotConfiguration>();
-                    if (botConfiguration == null)
-                    {
-                        throw new System.Exception("BotConfiguration section not found.");
-                    }
-
-                    // Registra la configurazione del bot
-                    services.AddSingleton(botConfiguration);
-
-                    // Registra il client di Telegram
-                    services.AddSingleton<ITelegramBotClient>(new TelegramBotClient(botConfiguration.BotToken));
+                    // Usa direttamente la configurazione dalle ENV variables tramite BotConfig
+                    services.AddSingleton<ITelegramBotClient>(new TelegramBotClient(BotConfig.BotToken));
 
                     // Registra il DbContext per SQLite, usando la ConnectionString dal file appsettings.json
                     services.AddDbContext<BotDbContext>(options =>

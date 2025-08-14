@@ -19,14 +19,12 @@ namespace TelegramBotClassifica.Services
     {
         private readonly ITelegramBotClient _botClient;
         private readonly ILogger<BotService> _logger;
-        private readonly BotConfiguration _botConfiguration;
         private readonly IDataService _dataService;
 
-        public BotService(ITelegramBotClient botClient, ILogger<BotService> logger, BotConfiguration botConfiguration, IDataService dataService)
+        public BotService(ITelegramBotClient botClient, ILogger<BotService> logger, IDataService dataService)
         {
             _botClient = botClient;
             _logger = logger;
-            _botConfiguration = botConfiguration;
             _dataService = dataService;
         }
 
@@ -72,10 +70,7 @@ namespace TelegramBotClassifica.Services
             // Se il messaggio NON è privato O NON inizia con '/', allora ignoriamo il comando.
             if (msg.Chat.Type != ChatType.Private && msg.Text?.StartsWith("/") != true)
             {
-                // LA CORREZIONE È QUI SOTTO:
-                // Abbiamo commentato la riga che stampava i messaggi del gruppo nei log.
-                // Ora il bot ignorerà questi messaggi in completo silenzio.
-                // _logger.LogInformation("Received non-command message '{text}' from group {chatId}.", msg.Text, msg.Chat.Id);
+                // Ignora i messaggi del gruppo che non sono comandi
                 return;
             }
 
@@ -295,7 +290,7 @@ namespace TelegramBotClassifica.Services
 
         private bool IsUserAuthorized(long userId)
         {
-            return _botConfiguration.AuthorizedAdminIds.Contains(userId);
+            return BotConfig.AuthorizedAdminIds.Contains(userId);
         }
 
         private Task HandlePollingErrorAsync(ITelegramBotClient botClient, System.Exception exception, CancellationToken cancellationToken)

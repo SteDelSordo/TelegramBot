@@ -7,6 +7,7 @@ using Telegram.Bot;
 using TelegramBotClassifica.Services;
 using TelegramBotClassifica.Configuration;
 using TelegramBotClassifica.Models;
+using Microsoft.EntityFrameworkCore; // <-- LA CORREZIONE È QUI! Questo using è fondamentale.
 
 namespace TelegramBotClassifica
 {
@@ -21,7 +22,6 @@ namespace TelegramBotClassifica
             Host.CreateDefaultBuilder(args)
                 .ConfigureAppConfiguration((hostingContext, config) =>
                 {
-                    // Carica le configurazioni da appsettings.json e variabili d'ambiente
                     config.AddJsonFile("appsettings.json", optional: true, reloadOnChange: true);
                     config.AddEnvironmentVariables();
                 })
@@ -39,12 +39,12 @@ namespace TelegramBotClassifica
                     // Registra il client di Telegram
                     services.AddSingleton<ITelegramBotClient>(new TelegramBotClient(botConfiguration.BotToken));
 
-                    // NUOVO: Registra il DbContext per SQLite
+                    // Registra il DbContext per SQLite, usando la ConnectionString dal file appsettings.json
                     services.AddDbContext<BotDbContext>(options =>
                         options.UseSqlite(hostContext.Configuration.GetConnectionString("DefaultConnection") ?? "Data Source=classifica.db"));
 
-                    // NUOVO: Registra il nostro nuovo servizio dati
-                    services.AddSingleton<IDataService, SqliteDbService>();
+                    // Registra il nostro nuovo servizio dati
+                    services.AddScoped<IDataService, SqliteDbService>();
 
                     // Registra il servizio del bot come Hosted Service
                     services.AddHostedService<BotService>();

@@ -1,55 +1,32 @@
-using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
+using System.Threading;
+using System.Threading.Tasks;
 using Telegram.Bot;
-using Telegram.Bot.Polling;
 using Telegram.Bot.Types;
 using Telegram.Bot.Types.Enums;
 using TelegramBotClassifica.Configuration;
-using TelegramBotClassifica.Models;
-using System;
-using System.Collections.Generic;
+using Microsoft.Extensions.Logging;
 using System.Linq;
-using System.Threading;
-using System.Threading.Tasks;
 using System.Text;
 
 namespace TelegramBotClassifica.Services
 {
-    public class BotService : BackgroundService
+    public interface IUpdateHandler
     {
-        private readonly ITelegramBotClient _botClient;
-        private readonly ILogger<BotService> _logger;
+        Task HandleUpdateAsync(ITelegramBotClient botClient, Update update, CancellationToken cancellationToken = default);
+    }
+
+    public class UpdateHandler : IUpdateHandler
+    {
         private readonly IDataService _dataService;
+        private readonly ILogger<UpdateHandler> _logger;
 
-        public BotService(ITelegramBotClient botClient, ILogger<BotService> logger, IDataService dataService)
+        public UpdateHandler(IDataService dataService, ILogger<UpdateHandler> logger)
         {
-            _botClient = botClient;
-            _logger = logger;
             _dataService = dataService;
+            _logger = logger;
         }
 
-        protected override async Task ExecuteAsync(CancellationToken stoppingToken)
-        {
-            _logger.LogInformation("BotService is starting.");
-            await _dataService.InitializeAsync();
-
-            var receiverOptions = new ReceiverOptions
-            {
-                AllowedUpdates = Array.Empty<UpdateType>()
-            };
-
-            _botClient.StartReceiving(
-                updateHandler: HandleUpdateAsync,
-                pollingErrorHandler: HandlePollingErrorAsync,
-                receiverOptions: receiverOptions,
-                cancellationToken: stoppingToken
-            );
-
-            _logger.LogInformation("BotService started receiving updates.");
-            await Task.Delay(Timeout.Infinite, stoppingToken);
-        }
-
-        private async Task HandleUpdateAsync(ITelegramBotClient botClient, Update update, CancellationToken cancellationToken)
+        public async Task HandleUpdateAsync(ITelegramBotClient botClient, Update update, CancellationToken cancellationToken = default)
         {
             Message? message = update.Message;
 
@@ -67,10 +44,8 @@ namespace TelegramBotClassifica.Services
             bool shouldSendResponse = false;
             var msgText = "";
 
-            // Se il messaggio NON è privato O NON inizia con '/', allora ignoriamo il comando.
             if (msg.Chat.Type != ChatType.Private && msg.Text?.StartsWith("/") != true)
             {
-                // Ignora i messaggi del gruppo che non sono comandi
                 return;
             }
 
@@ -291,12 +266,6 @@ namespace TelegramBotClassifica.Services
         private bool IsUserAuthorized(long userId)
         {
             return BotConfig.AuthorizedAdminIds.Contains(userId);
-        }
-
-        private Task HandlePollingErrorAsync(ITelegramBotClient botClient, System.Exception exception, CancellationToken cancellationToken)
-        {
-            _logger.LogError(exception, "Polling error: {ErrorMessage}", exception.Message);
-            return Task.CompletedTask;
         }
     }
 }

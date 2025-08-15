@@ -51,9 +51,13 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "dependencies": {
-            "Microsoft.Azure.Cosmos": {
+            "Microsoft.EntityFrameworkCore.Design": {
               "target": "Package",
-              "version": "[3.39.1, )"
+              "version": "[8.0.7, )"
+            },
+            "Microsoft.EntityFrameworkCore.Sqlite": {
+              "target": "Package",
+              "version": "[8.0.7, )"
             },
             "Microsoft.Extensions.Configuration.Binder": {
               "target": "Package",
@@ -92,6 +96,9 @@
           "assetTargetFallback": true,
           "warn": true,
           "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }

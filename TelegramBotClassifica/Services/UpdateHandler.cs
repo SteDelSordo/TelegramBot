@@ -32,6 +32,11 @@ namespace TelegramBotClassifica.Services
             {
                 _logger.LogInformation("HandleUpdateAsync: Ricevuto un update. Tipo: {UpdateType} - Raw: {RawUpdate}", update?.Type.ToString() ?? "NULL", update);
 
+                if (update == null)
+                {
+                    _logger.LogWarning("HandleUpdateAsync: Update is null.");
+                    return;
+                }
                 Message? message = update.Message;
 
                 if (message is not { } msg)

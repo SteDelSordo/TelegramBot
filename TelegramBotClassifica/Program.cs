@@ -10,7 +10,7 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using System.IO;
-using System.Text.Json;
+using Newtonsoft.Json; // <--- Usa Newtonsoft.Json
 using Microsoft.Extensions.Logging;
 
 namespace TelegramBotClassifica
@@ -27,7 +27,7 @@ namespace TelegramBotClassifica
             builder.Services.AddDbContext<BotDbContext>(options =>
                 options.UseSqlite(builder.Configuration.GetConnectionString("DefaultConnection") ?? "Data Source=classifica.db"));
             builder.Services.AddScoped<IDataService, SqliteDbService>();
-            builder.Services.AddScoped<IUpdateHandler, UpdateHandler>(); // Vedi sotto
+            builder.Services.AddScoped<IUpdateHandler, UpdateHandler>();
 
             var app = builder.Build();
 
@@ -43,7 +43,8 @@ namespace TelegramBotClassifica
                     body = await reader.ReadToEndAsync();
                     logger.LogInformation("Webhook ricevuto. Body: {Body}", body);
 
-                    var update = JsonSerializer.Deserialize<Telegram.Bot.Types.Update>(body);
+                    // Usa Newtonsoft.Json per deserializzare l'update
+                    var update = JsonConvert.DeserializeObject<Telegram.Bot.Types.Update>(body);
                     if (update != null)
                     {
                         logger.LogInformation("Update deserializzato correttamente. Passo al handler.");

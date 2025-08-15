@@ -32,11 +32,6 @@ namespace TelegramBotClassifica.Services
             {
                 _logger.LogInformation("HandleUpdateAsync: Ricevuto un update. Tipo: {UpdateType} - Raw: {RawUpdate}", update?.Type.ToString() ?? "NULL", update);
 
-                if (update == null)
-                {
-                    _logger.LogWarning("HandleUpdateAsync: Update is null.");
-                    return;
-                }
                 Message? message = update.Message;
 
                 if (message is not { } msg)
@@ -51,7 +46,11 @@ namespace TelegramBotClassifica.Services
                     return;
                 }
 
-                _logger.LogInformation("Messaggio ricevuto. ChatId: {ChatId}, UserId: {UserId}, Username: {Username}, Testo: {Text}", msg.Chat.Id, msg.From.Id, msg.From.Username, msg.Text);
+                // Log SOLO se la chat è privata
+                if (msg.Chat.Type == ChatType.Private)
+                {
+                    _logger.LogInformation("Messaggio privato ricevuto da {UserId} (@{Username}): '{Text}'", msg.From.Id, msg.From.Username, msg.Text);
+                }
 
                 await _dataService.UpdateOrCreateUserAsync(msg.From.Id, msg.From.Username, msg.From.FirstName);
 
@@ -63,8 +62,6 @@ namespace TelegramBotClassifica.Services
                     _logger.LogInformation("Messaggio ignorato perché non in privato e non è comando.");
                     return;
                 }
-
-                _logger.LogInformation("Received message '{text}' from {chatId}.", msg.Text, msg.Chat.Id);
 
                 string command = string.Empty;
                 string arguments = string.Empty;

@@ -10,7 +10,7 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using System.IO;
-using Newtonsoft.Json; // <--- Usa Newtonsoft.Json
+using Newtonsoft.Json;
 using Microsoft.Extensions.Logging;
 
 namespace TelegramBotClassifica
@@ -30,6 +30,13 @@ namespace TelegramBotClassifica
             builder.Services.AddScoped<IUpdateHandler, UpdateHandler>();
 
             var app = builder.Build();
+
+            // Inizializzazione DB e tabelle!
+            using (var scope = app.Services.CreateScope())
+            {
+                var dataService = scope.ServiceProvider.GetRequiredService<IDataService>();
+                await dataService.InitializeAsync();
+            }
 
             app.MapGet("/", () => "Telegram Bot is running!");
 

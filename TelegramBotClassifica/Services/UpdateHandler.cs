@@ -174,10 +174,14 @@ namespace TelegramBotClassifica.Services
                             {
                                 try
                                 {
-                                    var leaderboard = await _dataService.GetLeaderboardAsync();
+                                    var leaderboard = (await _dataService.GetLeaderboardAsync())
+                                        .Where(u => u.Points > 0) // Mostra solo chi ha almeno 1 coin
+                                        .ToList();
+
                                     if (!leaderboard.Any())
                                     {
                                         msgText = "La classifica è vuota o nessuno ha ancora coin! Inizia ad aggiungerli.";
+                                        shouldSendResponse = true;
                                     }
                                     else
                                     {
@@ -203,10 +207,25 @@ namespace TelegramBotClassifica.Services
 
                                             sb.AppendLine($"{rank}. {displayName} - 🪙 {entry.Points}");
                                             rank++;
+
+                                            if (sb.Length > 3500)
+                                            {
+                                                await botClient.SendTextMessageAsync(
+                                                    chatId: msg.Chat.Id,
+                                                    text: sb.ToString(),
+                                                    cancellationToken: cancellationToken);
+                                                sb.Clear();
+                                            }
                                         }
-                                        msgText = sb.ToString();
+                                        if (sb.Length > 0)
+                                        {
+                                            await botClient.SendTextMessageAsync(
+                                                chatId: msg.Chat.Id,
+                                                text: sb.ToString(),
+                                                cancellationToken: cancellationToken);
+                                        }
+                                        shouldSendResponse = false; // Già risposto a blocchi
                                     }
-                                    shouldSendResponse = true;
                                 }
                                 catch (Exception ex)
                                 {

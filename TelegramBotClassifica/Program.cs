@@ -5,7 +5,6 @@ using System.Threading.Tasks;
 using Telegram.Bot;
 using TelegramBotClassifica.Services;
 using TelegramBotClassifica.Configuration;
-using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
@@ -24,23 +23,24 @@ namespace TelegramBotClassifica
 
             // Configurazione di servizi
             builder.Services.AddSingleton<ITelegramBotClient>(new TelegramBotClient(BotConfig.BotToken));
-            builder.Services.AddDbContext<BotDbContext>(options =>
-                options.UseSqlite(builder.Configuration.GetConnectionString("DefaultConnection") ?? "Data Source=classifica.db"));
-            builder.Services.AddScoped<IDataService, SqliteDbService>();
+
+            // MongoDB connection
+            string? mongoUriConfig = builder.Configuration["MongoDb:Uri"];
+            string? mongoUriEnv = Environment.GetEnvironmentVariable("MONGODB_URI");
+            string mongoUri = mongoUriConfig ?? mongoUriEnv ?? throw new InvalidOperationException("MongoDB connection string is not set in configuration or environment variables.");
+            var mongoDbService = new MongoDbService(mongoUri);
+
+            // Inizializza e fai il seed dal backup solo se serve
+            await mongoDbService.InitializeAsync();
+            await mongoDbService.SeedFromJsonIfEmptyAsync("users_backup.json");
+
+            builder.Services.AddSingleton<IDataService>(mongoDbService);
             builder.Services.AddScoped<IUpdateHandler, UpdateHandler>();
 
             var app = builder.Build();
 
-            // Inizializzazione DB e tabelle!
-            using (var scope = app.Services.CreateScope())
-            {
-                var dataService = scope.ServiceProvider.GetRequiredService<IDataService>();
-                await dataService.InitializeAsync();
-            }
-
             app.MapGet("/", () => "Telegram Bot is running!");
 
-            // Endpoint webhook: riceve update da Telegram
             app.MapPost("/webhook", async (HttpRequest request, ITelegramBotClient botClient, IUpdateHandler handler, ILogger<Program> logger) =>
             {
                 string body = "";
@@ -50,7 +50,6 @@ namespace TelegramBotClassifica
                     body = await reader.ReadToEndAsync();
                     logger.LogInformation("Webhook ricevuto. Body: {Body}", body);
 
-                    // Usa Newtonsoft.Json per deserializzare l'update
                     var update = JsonConvert.DeserializeObject<Telegram.Bot.Types.Update>(body);
                     if (update != null)
                     {

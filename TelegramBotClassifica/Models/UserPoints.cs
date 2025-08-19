@@ -1,24 +1,30 @@
+using MongoDB.Bson;
+using MongoDB.Bson.Serialization.Attributes;
 using Newtonsoft.Json;
-using System.ComponentModel.DataAnnotations;
 
 namespace TelegramBotClassifica.Models
 {
     public class UserPoints
     {
-        [Key] // Dice a EF Core che questo è l'ID primario autoincrementante
-        [JsonProperty("id")]
-        public int Id { get; set; }
+        [BsonId]
+        [BsonRepresentation(BsonType.ObjectId)]
+        [JsonIgnore]
+        public string? Id { get; set; }
 
         [JsonProperty("userId")]
+        [BsonElement("userId")]
         public long UserId { get; set; }
 
         [JsonProperty("username")]
+        [BsonElement("username")]
         public string? Username { get; set; }
 
         [JsonProperty("firstName")]
+        [BsonElement("firstName")]
         public string? FirstName { get; set; }
 
         [JsonProperty("points")]
+        [BsonElement("points")]
         public int Points { get; set; }
     }
 }

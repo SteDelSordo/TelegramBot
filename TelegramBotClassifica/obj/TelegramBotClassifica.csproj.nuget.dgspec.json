@@ -51,14 +51,6 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "dependencies": {
-            "Microsoft.EntityFrameworkCore.Design": {
-              "target": "Package",
-              "version": "[8.0.7, )"
-            },
-            "Microsoft.EntityFrameworkCore.Sqlite": {
-              "target": "Package",
-              "version": "[8.0.7, )"
-            },
             "Microsoft.Extensions.Configuration.Binder": {
               "target": "Package",
               "version": "[8.0.0, )"
@@ -75,9 +67,13 @@
               "target": "Package",
               "version": "[8.0.0, )"
             },
-            "System.Data.SqlClient": {
+            "MongoDB.Driver": {
               "target": "Package",
-              "version": "[4.8.6, )"
+              "version": "[3.4.3, )"
+            },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[13.0.3, )"
             },
             "Telegram.Bot": {
               "target": "Package",
